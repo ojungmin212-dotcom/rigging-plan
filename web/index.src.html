@@ -1,0 +1,1097 @@
+<meta charset="utf-8">
+<title>리깅플랜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Sometype+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  /* 라이트: 크림 종이 + 먹색, 그림자 없는 평면, 라임·코럴 포인트 */
+  --bg:#F9F4EB; --surface:#FFFDF8; --surface-2:#F3EDE2; --fill:rgba(1,1,1,.07); --fill-2:rgba(1,1,1,.035);
+  --label:#010101; --label-2:#5F5A52; --label-3:#A7A196; --sep:rgba(1,1,1,.13);
+  --accent:#010101; --accent-soft:rgba(1,1,1,.06); --accent-fill:.07; --heat-rgb:196,245,110; --heat-base:.10; --heat-span:.90;
+  --hl:#D0FF7E; --dim:#D9484B; --chip-ink:#010101;
+  --sel-bg:#010101; --sel-fg:#F9F4EB; --sel-sub:rgba(249,244,235,.66);
+  --ok:#3D6A00; --ok-dot:#9EDB3C; --ok-soft:#D0FF7E;
+  --warn:#9A5A00; --warn-dot:#F0A33A; --warn-soft:#FFD58A;
+  --bad:#C23B3E; --bad-dot:#E75D60; --bad-soft:#F08A8C;
+  --nav:#FFFDF8; --nav-line:rgba(1,1,1,.08);
+  --shadow:none; --seg-on:#010101; --seg-on-fg:#F9F4EB; --seg-shadow:none; --chip-bg:#F9F4EB;
+  --cta-bg:rgba(1,1,1,.62); --cta-fg:#F9F4EB;
+  --ground:#010101; --struct:#EDE6DA; --struct-line:#CFC7B8; --crane:#F2C200; --crane-dark:#2B2B2F; --rope:#5F5A52;
+  --toast-bg:#010101; --toast-fg:#F9F4EB;
+  --display:"Inter Tight","Noto Sans KR","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --body:"Inter Tight","Noto Sans KR","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"Sometype Mono","Noto Sans KR",ui-monospace,Menlo,monospace;
+  --font:var(--body);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+  color-scheme:dark;
+  /* 다크: 먹색 바탕 + 크림 글자, 라임이 선택·강조를 맡음 */
+  --bg:#0E0E0D; --surface:#1A1C1C; --surface-2:#222525; --fill:rgba(249,244,235,.09); --fill-2:rgba(249,244,235,.045);
+  --label:#F9F4EB; --label-2:#ABA69C; --label-3:#6D6961; --sep:rgba(249,244,235,.14);
+  --accent:#F9F4EB; --accent-soft:rgba(249,244,235,.08); --accent-fill:.10; --heat-rgb:208,255,126; --heat-base:.05; --heat-span:.55;
+  --hl:#D0FF7E; --dim:#FF7D80; --chip-ink:#010101;
+  --sel-bg:#D0FF7E; --sel-fg:#010101; --sel-sub:rgba(1,1,1,.62);
+  --ok:#D0FF7E; --ok-dot:#D0FF7E; --ok-soft:#D0FF7E;
+  --warn:#FFC266; --warn-dot:#F0A33A; --warn-soft:#F0A33A;
+  --bad:#FF8A8C; --bad-dot:#E75D60; --bad-soft:#E75D60;
+  --nav:#1A1C1C; --nav-line:rgba(249,244,235,.1);
+  --shadow:none; --seg-on:#F9F4EB; --seg-on-fg:#010101; --seg-shadow:none; --chip-bg:#0E0E0D;
+  --cta-bg:#D0FF7E; --cta-fg:#010101;
+  --ground:#6D6961; --struct:#222525; --struct-line:#3A3D3D; --crane:#FFC21A; --crane-dark:#9A968E; --rope:#ABA69C;
+  --toast-bg:#F9F4EB; --toast-fg:#010101;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  /* 다크: 먹색 바탕 + 크림 글자, 라임이 선택·강조를 맡음 */
+  --bg:#0E0E0D; --surface:#1A1C1C; --surface-2:#222525; --fill:rgba(249,244,235,.09); --fill-2:rgba(249,244,235,.045);
+  --label:#F9F4EB; --label-2:#ABA69C; --label-3:#6D6961; --sep:rgba(249,244,235,.14);
+  --accent:#F9F4EB; --accent-soft:rgba(249,244,235,.08); --accent-fill:.10; --heat-rgb:208,255,126; --heat-base:.05; --heat-span:.55;
+  --hl:#D0FF7E; --dim:#FF7D80; --chip-ink:#010101;
+  --sel-bg:#D0FF7E; --sel-fg:#010101; --sel-sub:rgba(1,1,1,.62);
+  --ok:#D0FF7E; --ok-dot:#D0FF7E; --ok-soft:#D0FF7E;
+  --warn:#FFC266; --warn-dot:#F0A33A; --warn-soft:#F0A33A;
+  --bad:#FF8A8C; --bad-dot:#E75D60; --bad-soft:#E75D60;
+  --nav:#1A1C1C; --nav-line:rgba(249,244,235,.1);
+  --shadow:none; --seg-on:#F9F4EB; --seg-on-fg:#010101; --seg-shadow:none; --chip-bg:#0E0E0D;
+  --cta-bg:#D0FF7E; --cta-fg:#010101;
+  --ground:#6D6961; --struct:#222525; --struct-line:#3A3D3D; --crane:#FFC21A; --crane-dark:#9A968E; --rope:#ABA69C;
+  --toast-bg:#F9F4EB; --toast-fg:#010101;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{font-family:var(--font);color:var(--label);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+button,input,select{font:inherit;color:inherit;letter-spacing:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--accent-soft);outline-offset:1px;border-radius:8px}
+.num{font-variant-numeric:tabular-nums}
+
+/* nav bar */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nav);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid var(--nav-line)}
+.nav-inner{max-width:1320px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:600;font-size:17px;min-width:0}
+.brand-mark{width:28px;height:28px;border-radius:7px;background:linear-gradient(160deg,#FFC21A,#FF9500);display:grid;place-items:center;flex:none}
+.brand small{font-weight:400;color:var(--label-2);font-size:13px}
+.seg{display:inline-flex;background:var(--fill);border-radius:9px;padding:2px;gap:0;margin-inline:auto}
+.seg button{border:0;background:transparent;padding:5px 14px;border-radius:7px;font-size:13px;font-weight:500;color:var(--label);white-space:nowrap;transition:background .2s}
+.seg button[aria-selected="true"]{background:var(--seg-on);box-shadow:var(--seg-shadow);font-weight:600}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.theme-seg{display:inline-flex;background:var(--fill);border-radius:999px;padding:2px}
+.theme-seg button{border:0;background:transparent;width:30px;height:26px;border-radius:999px;display:grid;place-items:center;color:var(--label-2);transition:background .2s,color .2s}
+.theme-seg button[aria-pressed="true"]{background:var(--seg-on);color:var(--label);box-shadow:var(--seg-shadow)}
+.theme-seg svg{width:15px;height:15px}
+.btn-plain{border:0;background:transparent;color:var(--accent);font-size:15px;padding:6px 4px}
+.btn-tinted{border:0;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:14px;padding:7px 14px;border-radius:999px}
+.btn-tinted:active,.btn-plain:active{opacity:.6}
+
+/* layout */
+.page{max-width:1320px;margin:0 auto;padding:24px 16px 64px}
+.split{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start}
+.sidebar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px)}
+.side-head{display:flex;align-items:baseline;justify-content:space-between;padding:0 4px 8px}
+.side-head h2{font-size:22px;font-weight:700;margin:0;letter-spacing:-.02em}
+.caption{font-size:12px;color:var(--label-2);padding:8px 16px 0;margin:0}
+.section-label{font-size:13px;color:var(--label-2);text-transform:none;padding:0 16px 6px;margin:22px 0 0;font-weight:400}
+.section-label:first-child{margin-top:0}
+
+/* grouped inset list */
+.group{background:var(--surface);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.row{display:flex;align-items:center;gap:12px;min-height:44px;padding:10px 16px;position:relative}
+.row + .row::before{content:"";position:absolute;top:0;left:16px;right:0;border-top:.5px solid var(--sep)}
+.row .lbl{flex:1;min-width:0}
+.row .sub{display:block;font-size:12px;color:var(--label-2)}
+.list-btn{width:100%;border:0;background:transparent;text-align:left}
+.list-btn:hover{background:var(--fill-2)}
+.list-btn[aria-current="true"]{background:var(--sel-bg);color:var(--sel-fg)}
+.list-btn[aria-current="true"] .sub{color:var(--sel-sub)}
+.list-btn[aria-current="true"]::before,.list-btn[aria-current="true"] + .row::before{border-color:transparent}
+.chev{color:var(--label-3);flex:none}
+.side-pick{font-weight:600;color:var(--label) !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.list-btn[aria-current="true"] .side-pick{color:var(--sel-fg) !important}
+.list-btn[aria-current="true"] .chev{color:var(--sel-sub)}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.dot.ok{background:var(--ok-dot)}.dot.caution{background:var(--warn-dot)}.dot.over,.dot.geom,.dot.none{background:var(--bad-dot)}
+
+.field{display:flex;align-items:center;gap:6px;flex:none}
+.field input{width:88px;text-align:right;border:0;background:transparent;padding:4px 0;font-variant-numeric:tabular-nums;color:var(--label);font-size:15px}
+.field input:focus{outline:none;color:var(--accent)}
+.row:focus-within{background:var(--fill-2)}
+.unit{color:var(--label-2);font-size:14px;min-width:14px}
+select.inline{border:0;background:transparent;color:var(--accent);text-align:right;font-size:15px;padding:4px 0}
+
+.switch{position:relative;width:51px;height:31px;flex:none}
+.switch input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
+.switch span{position:absolute;inset:0;border-radius:999px;background:var(--fill);transition:background .2s}
+.switch span::after{content:"";position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(0,0,0,.15),0 1px 1px rgba(0,0,0,.16);transition:transform .22s cubic-bezier(.3,.7,.4,1)}
+.switch input:checked + span{background:var(--ok-dot)}
+.switch input:checked + span::after{transform:translateX(20px)}
+.switch input:focus-visible + span{outline:3px solid var(--accent-soft)}
+
+/* detail */
+.title-wrap{padding:0 4px 18px}
+.eyebrow{font-size:13px;color:var(--label-2);margin:0 0 2px}
+.title-input{font-size:32px;font-weight:700;letter-spacing:-.025em;border:0;background:transparent;width:100%;padding:0;color:var(--label)}
+.title-input:focus{outline:none}
+.detail-grid{display:grid;grid-template-columns:minmax(240px,320px) minmax(0,1fr);gap:24px;align-items:start}
+.card{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:20px}
+.stack{display:grid;gap:16px}
+
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;align-items:end}
+.hero .k{font-size:13px;color:var(--label-2);margin:0}
+.hero h3{font-size:28px;font-weight:700;margin:2px 0 0;letter-spacing:-.025em;line-height:1.15}
+.hero h3 small{font-size:15px;font-weight:500;color:var(--label-2);margin-left:6px;letter-spacing:0}
+.big-u{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1;text-align:right}
+.big-u small{font-size:18px;font-weight:500}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--sep);border-radius:12px;overflow:hidden;margin-top:18px}
+.metric{background:var(--surface-2);padding:10px 12px}
+.metric .k{font-size:11px;color:var(--label-2);margin:0}
+.metric .v{font-size:17px;font-weight:600;margin:2px 0 0}
+.metric .v small{font-size:12px;font-weight:500;color:var(--label-2);margin-left:2px}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.caution{background:var(--warn-soft);color:var(--warn)}
+.pill.over,.pill.geom,.pill.none{background:var(--bad-soft);color:var(--bad)}
+.note{font-size:13px;color:var(--label-2);margin:12px 0 0}
+.note b{color:var(--label);font-weight:600}
+
+.bar{height:6px;border-radius:999px;background:var(--fill);overflow:hidden;position:relative;width:100%}
+.bar i{position:absolute;inset:0 auto 0 0;border-radius:999px}
+.bar i.ok{background:var(--ok-dot)}.bar i.caution{background:var(--warn-dot)}.bar i.over{background:var(--bad-dot)}
+.bar .lim{position:absolute;top:-3px;bottom:-3px;width:1.5px;background:var(--label-2);opacity:.6}
+
+.cands .row{align-items:center}
+.cand-main{flex:1;min-width:0;display:grid;gap:6px}
+.cand-top{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.cand-name{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cand-name small{font-weight:400;color:var(--label-2);margin-left:4px}
+.cand-meta{font-size:12px;color:var(--label-2)}
+.cand-u{width:56px;text-align:right;font-weight:600;flex:none}
+.cand-btn{width:100%;border:0;background:transparent;text-align:left}
+.cand-btn:hover{background:var(--fill-2)}
+.cand-btn[aria-pressed="true"]{background:var(--accent-soft)}
+.rec-tag{font-size:11px;font-weight:600;color:var(--accent)}
+
+.chart-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.chart-head h4{margin:0;font-size:17px;font-weight:600;letter-spacing:-.015em}
+.chart-head span{font-size:12px;color:var(--label-2)}
+svg.fig{width:100%;height:auto;display:block}
+.fig text{font-family:var(--font);letter-spacing:0}
+
+.danger{color:var(--bad);border:0;background:transparent;font-size:15px;padding:0;width:100%;text-align:center;min-height:44px}
+
+/* summary */
+.summary-hero{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.summary-hero .card p{margin:0}
+.kpi-k{font-size:13px;color:var(--label-2)}
+.kpi-v{font-size:26px;font-weight:700;letter-spacing:-.025em;margin-top:4px !important;line-height:1.2}
+.kpi-s{font-size:13px;color:var(--label-2);margin-top:4px !important}
+.table-wrap{overflow-x:auto;border-radius:12px;background:var(--surface);box-shadow:var(--shadow)}
+table.mx{border-collapse:separate;border-spacing:0;width:100%;font-size:13px}
+table.mx th,table.mx td{padding:10px 12px;text-align:center;border-bottom:.5px solid var(--sep);white-space:nowrap}
+table.mx th{font-weight:600;color:var(--label-2);font-size:12px;background:var(--surface)}
+table.mx th:first-child,table.mx td:first-child{text-align:left;position:sticky;left:0;background:var(--surface);z-index:1}
+table.mx tr:last-child td{border-bottom:0}
+.chip{display:inline-block;min-width:52px;padding:3px 8px;border-radius:7px;font-weight:600;font-variant-numeric:tabular-nums}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}.chip.caution{background:var(--warn-soft);color:var(--warn)}.chip.over,.chip.geom{background:var(--bad-soft);color:var(--bad)}
+.chip.pick{box-shadow:inset 0 0 0 1.5px currentColor}
+
+/* db */
+table.lc{border-collapse:separate;border-spacing:0;font-size:12px;font-variant-numeric:tabular-nums}
+table.lc th,table.lc td{padding:6px 9px;text-align:right;border-bottom:.5px solid var(--sep)}
+table.lc thead th{position:sticky;top:0;background:var(--surface);color:var(--label-2);font-weight:600}
+table.lc th[scope="row"]{position:sticky;left:0;background:var(--surface);color:var(--label-2);font-weight:600;text-align:left}
+table.lc td.e{color:var(--label-3)}
+.lc-wrap{overflow:auto;max-height:520px;border-radius:12px;background:var(--surface);box-shadow:var(--shadow)}
+.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--sep);border-radius:12px;overflow:hidden}
+.kv div{background:var(--surface);padding:12px 14px}
+.kv .k{font-size:12px;color:var(--label-2);margin:0}
+.kv .v{font-size:16px;font-weight:600;margin:2px 0 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* method */
+.prose{max-width:68ch}
+.prose h3{font-size:20px;margin:28px 0 8px;letter-spacing:-.02em}
+.prose p,.prose li{color:var(--label);font-size:15px}
+.prose code,.formula{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:13px;background:var(--fill-2);padding:1px 6px;border-radius:5px}
+.formula{display:block;padding:12px 14px;border-radius:10px;margin:8px 0;white-space:pre-wrap;line-height:1.6}
+.method-grid{display:grid;grid-template-columns:minmax(260px,360px) minmax(0,1fr);gap:28px;align-items:start}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--toast-bg);color:var(--toast-fg);padding:10px 18px;border-radius:999px;font-size:14px;font-weight:500;opacity:0;transition:opacity .2s,transform .25s;pointer-events:none;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.empty{padding:40px 20px;text-align:center;color:var(--label-2)}
+
+@media (max-width:980px){
+  .detail-grid,.method-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:820px){
+  .split{grid-template-columns:minmax(0,1fr);gap:20px}
+  .sidebar{position:static}
+  .seg{order:3;width:100%;margin:0}
+  .seg button{flex:1;padding:6px 6px}
+  .nav-actions{margin-left:auto}
+  .summary-hero{grid-template-columns:minmax(0,1fr)}
+  .kv{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .title-input{font-size:28px}
+  .brand small{display:none}
+}
+
+/* ===== 에디토리얼 레이어: 대형 대문자 그로테스크 + 모노 라벨 + 평면 ===== */
+body{font-family:var(--body);letter-spacing:-.018em;font-size:15px}
+.eyebrow,.section-label,.caption,.seg button,.btn-tinted,.btn-plain,.pill,.chip,.metric .k,.kpi-k,.hero .k,.chart-head span,table.mx th,table.lc thead th,table.lc th[scope="row"],.rec-tag,.nav-tag,.cta,.danger,.unit,.row .sub,.cand-meta,.kv .k,.note,.toast{font-family:var(--mono);letter-spacing:0}
+.eyebrow,.section-label,.seg button,.btn-plain,.btn-tinted,.pill,.chip,.metric .k,.kpi-k,.hero .k,table.mx th,.rec-tag,.nav-tag,.cta,.danger,.kv .k,.chart-head span{text-transform:uppercase}
+.eyebrow,.section-label{font-size:11px;font-weight:500;color:var(--label)}
+.eyebrow::before,.section-label::before{content:"[ "}.eyebrow::after,.section-label::after{content:" ]"}
+.caption,.note{font-size:11.5px;line-height:1.55}
+.row .sub,.cand-meta{font-size:11px}
+
+/* 떠 있는 내비게이션 */
+.nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);background:transparent;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;pointer-events:none;margin-top:12px}
+.nav-inner{pointer-events:none;max-width:1320px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:center;gap:10px;position:relative;flex-wrap:nowrap}
+.navbar{pointer-events:auto;display:flex;align-items:center;gap:14px;background:var(--nav);border:1px solid var(--nav-line);padding:7px 8px 7px 12px;border-radius:3px;min-width:0}
+.brand-mark{width:auto;height:auto;background:none;border-radius:0;color:var(--label);display:flex}
+.brand{gap:10px;font-family:var(--display);font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:-.02em;white-space:nowrap}
+.nav-tag{font-size:10.5px;color:var(--label-2);white-space:nowrap}
+.cta{pointer-events:auto;position:absolute;right:16px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:10px;border:0;background:var(--cta-bg);color:var(--cta-fg);font-size:11px;padding:13px 16px;border-radius:3px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.cta:hover{filter:brightness(1.15)}
+.seg{background:transparent;padding:0;gap:3px;border-radius:0;margin:0}
+.seg button{background:var(--chip-bg);font-size:10.5px;font-weight:500;padding:6px 9px;border-radius:2px;color:var(--label)}
+.seg button[aria-selected="true"]{background:var(--seg-on);color:var(--seg-on-fg);box-shadow:none;font-weight:500}
+.theme-seg{background:transparent;padding:0;gap:3px;border-radius:0}
+.theme-seg button{background:var(--chip-bg);width:26px;height:26px;border-radius:2px;color:var(--label-2)}
+.theme-seg button[aria-pressed="true"]{background:var(--seg-on);color:var(--seg-on-fg)}
+.page{padding-block:44px 80px}
+
+/* 대형 대문자 제목 */
+.title-wrap{padding:0 0 26px;border-bottom:1px solid var(--sep);margin-bottom:26px}
+.title-input,.side-head h2,.hero h3,.kpi-v,.big-u,.prose h3,.chart-head h4{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-.04em}
+.title-input{font-size:clamp(40px,6.2vw,84px);line-height:.88;padding-top:6px}
+.eyebrow{margin:0 0 12px}
+.side-head{padding:0 0 12px}
+.side-head h2{font-size:30px;line-height:.9}
+.chart-head h4{font-size:20px;letter-spacing:-.03em}
+.hero h3{font-size:clamp(28px,3.4vw,42px);line-height:.92}
+.hero h3 small{font-family:var(--mono);text-transform:uppercase;font-size:11px;font-weight:500;letter-spacing:0;display:block;margin:8px 0 0}
+.big-u{font-size:clamp(56px,7vw,96px);line-height:.85;letter-spacing:-.05em}
+.big-u small{font-size:.35em;letter-spacing:-.02em}
+.kpi-v{font-size:clamp(26px,3vw,38px);line-height:.95}
+
+/* 평면 표면: 그림자 없음, 가는 선, 거의 직각 */
+.group,.card,.table-wrap,.lc-wrap{border-radius:3px;box-shadow:none;border:1px solid var(--sep)}
+.card{padding:22px}
+.row + .row::before{left:0;border-top:1px solid var(--sep)}
+.list-btn:hover{background:var(--fill-2)}
+.metrics,.kv{border-radius:2px;background:var(--sep);gap:1px;border:1px solid var(--sep)}
+.metric{background:var(--surface)}
+.metric .v{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.03em}
+.kv .v{font-family:var(--display);font-weight:700;letter-spacing:-.025em}
+.pill,.chip{border-radius:2px;font-size:10.5px;font-weight:500;padding:4px 8px}
+.pill.ok,.pill.caution,.pill.over,.pill.geom,.pill.none,.chip.ok,.chip.caution,.chip.over,.chip.geom{color:var(--chip-ink)}
+.chip.pick{box-shadow:inset 0 0 0 1.5px var(--chip-ink)}
+.bar{height:4px;border-radius:0}.bar i{border-radius:0}
+.btn-plain{border:1px solid var(--label);color:var(--label);font-size:10.5px;padding:8px 12px;border-radius:2px;background:transparent}
+.btn-plain:hover{background:var(--label);color:var(--bg)}
+.btn-tinted{background:var(--label);color:var(--bg);border-radius:2px;font-size:10.5px;font-weight:500;padding:9px 14px}
+.danger{color:var(--bad);font-size:11px}
+.switch span{background:var(--fill)}
+.switch input:checked + span{background:var(--label)}
+.switch span::after{background:var(--bg);box-shadow:none}
+.field input{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.02em}
+.field input:focus{color:var(--label);background:var(--hl);border-radius:2px}
+:root[data-theme="dark"] .field input:focus{color:#010101}
+.cand-name{font-family:var(--display);font-weight:700;letter-spacing:-.02em}
+.cand-u{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.03em}
+.rec-tag{font-size:10px;background:var(--hl);color:#010101;padding:2px 6px;border-radius:2px}
+.cand-btn[aria-pressed="true"]{background:var(--fill)}
+table.mx th,table.lc thead th{font-size:10px;font-weight:500}
+table.lc{font-family:var(--mono);font-size:11.5px}
+.formula{font-family:var(--mono);background:var(--surface-2);border-radius:2px;border-left:3px solid var(--hl)}
+.prose h3{font-size:26px;line-height:.95;margin-top:34px}
+.prose p,.prose li{font-size:16px;line-height:1.5}
+.toast{border-radius:2px;font-size:11.5px;text-transform:uppercase}
+a{color:var(--label);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{background:var(--hl);color:#010101}
+:focus-visible{outline:2px solid var(--label);outline-offset:2px;border-radius:2px}
+@media (max-width:820px){
+  .nav-inner{flex-direction:column;align-items:stretch}
+  .navbar{flex-wrap:wrap;justify-content:space-between}
+  .cta{position:static;transform:none;justify-content:center}
+  .nav-tag{display:none}
+  .seg{order:3;width:100%}
+  .seg button{flex:1}
+}
+
+/* ===== 양중 검토 화면: 인양물명 60% + 점 격자 바탕 ===== */
+:root{--dot:#010101;--dot-size:.48px;--dot-gap:15px}
+:root[data-theme="dark"]{--dot:rgba(208,255,126,.55)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--dot:rgba(208,255,126,.55)}}
+body{min-height:100vh}
+body{background-color:var(--bg);background-image:radial-gradient(circle,var(--dot) var(--dot-size),transparent calc(var(--dot-size) + .4px));background-size:var(--dot-gap) var(--dot-gap);background-attachment:fixed}
+/* 인양물명·전체 요약·기준·방법 제목은 기본의 60% */
+body.view-lift #view .title-input,body.view-summary #view .title-input,body.view-method #view .title-input{font-size:calc(clamp(40px,6.2vw,84px) * .6)}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="navbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 11 11" fill="currentColor"><rect x="1" y="9" width="4" height="2"/><rect x="2" y="3" width="1" height="6"/><rect x="2" y="2" width="8" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="9" y="3" width="1" height="3"/><rect x="8" y="6" width="3" height="2"/></svg>
+        </span>
+        리깅플랜
+      </div>
+      <span class="nav-tag">크레인 용량 선정</span>
+      <div class="seg" role="tablist" aria-label="보기">
+        <button role="tab" data-view="lift" id="tab-lift">양중 검토</button>
+        <button role="tab" data-view="summary" id="tab-summary">전체 요약</button>
+        <button role="tab" data-view="db" id="tab-db">크레인 DB</button>
+        <button role="tab" data-view="method" id="tab-method">기준·방법</button>
+      </div>
+      <div class="theme-seg" role="group" aria-label="화면 모드">
+        <button type="button" data-theme-set="light" aria-label="라이트 모드" title="라이트"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg></button>
+        <button type="button" data-theme-set="dark" aria-label="다크 모드" title="다크"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
+        <button type="button" data-theme-set="auto" aria-label="시스템 설정 따르기" title="자동"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor" stroke="none"/></svg></button>
+      </div>
+    </div>
+    <button class="cta" id="copyBtn" type="button">요약 복사 <span aria-hidden="true">↗</span></button>
+  </div>
+</header>
+<main class="page" id="view"></main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const CRANES = /*__CRANES__*/[];
+CRANES.sort((a,b)=>a.maxCapacity_t-b.maxCapacity_t);
+
+/* ---------- state ---------- */
+const TYPES = ['AT','RT','TC','CR','TCR'];
+const DEFAULT_SETTINGS = { limit:0.80, critical:0.75, slingH:4.0, headClear:3.0, obsClear:2.0, hookPct:1.2, rigPct:3, types:{AT:true,RT:true,TC:true,CR:true,TCR:true} };
+const SAMPLE = [
+  { id:'l1', name:'옥상 냉각탑', w:6.5, rig:0.3, lw:4.0, lh:4.2, R:22, H:24, obs:true, od:14, oh:24 },
+  { id:'l2', name:'주 변압기', w:18.0, rig:0.6, lw:3.2, lh:3.0, R:10, H:0.5, obs:false, od:0, oh:0 },
+  { id:'l3', name:'옥상 공조기(AHU)', w:4.2, rig:0.2, lw:5.5, lh:2.4, R:28, H:30, obs:true, od:18, oh:30 },
+  { id:'l4', name:'PC 거더', w:22.0, rig:0.8, lw:12.0, lh:1.6, R:14, H:9, obs:false, od:0, oh:0 },
+  { id:'l5', name:'비상 발전기', w:12.0, rig:0.4, lw:6.0, lh:2.8, R:9, H:0.3, obs:false, od:0, oh:0 },
+  { id:'l6', name:'대형 공정설비(반응기)', w:48.0, rig:2.0, lw:4.5, lh:14.0, R:16, H:1.0, obs:false, od:0, oh:0 }
+];
+const STORE_KEY = 'rigging-plan-v2';
+let state = { lifts: JSON.parse(JSON.stringify(SAMPLE)), settings:{...DEFAULT_SETTINGS}, sel:'l1', view:'lift', preview:{}, dbSel: CRANES[0]?.id, sample:true, candFilter:'fit', dbType:'all', dbQuery:'' };
+try { const s = JSON.parse(localStorage.getItem(STORE_KEY)||'null'); if (s && Array.isArray(s.lifts)) { state = {...state, ...s, settings:{...DEFAULT_SETTINGS, ...(s.settings||{}), types:{...DEFAULT_SETTINGS.types, ...((s.settings||{}).types||{})}}}; } } catch(e){}
+try { const h = location.hash.replace('#',''); if (['lift','summary','db','method'].includes(h)) state.view = h; } catch(e){}
+function save(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify({lifts:state.lifts, settings:state.settings, sel:state.sel, view:state.view, dbSel:state.dbSel, sample:state.sample})); }catch(e){} }
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s??'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const f1 = n => (n==null||!isFinite(n)) ? '–' : (Math.round(n*10)/10).toLocaleString('ko-KR',{minimumFractionDigits:1,maximumFractionDigits:1});
+const f0 = n => (n==null||!isFinite(n)) ? '–' : Math.round(n).toLocaleString('ko-KR');
+const pct = u => (u==null||!isFinite(u)) ? '–' : Math.round(u*100)+'%';
+const STATUS = { ok:'적합', caution:'주의 · Critical Lift', over:'용량 초과', geom:'형상 불가', none:'적합 크레인 없음' };
+const STATUS_SHORT = { ok:'적합', caution:'주의', over:'초과', geom:'불가' };
+function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove('show'),1800); }
+
+/* ---------- engine ---------- */
+/* ---------- 크레인 형상 모델: 제원표 치수(dims) 우선, 없으면 등급별 근사 ---------- */
+const clamp=(v,lo,hi)=>Math.min(hi,Math.max(lo,v));
+const LIVERIES = /*__LIVERIES__*/{};
+const LIVERY_DEFAULT = { boom:'#F2C200', superstructure:'#F2C200', carrier:'#F2C200', cab:'#F2C200', counterweight:'#56565B', chassisDark:'#2B2B2F', stripe:null };
+function livery(c){
+  if (c._liv) return c._liv;
+  if (c.livery){ c._liv={...LIVERY_DEFAULT, ...Object.fromEntries(Object.entries(c.livery).filter(([,v])=>typeof v==='string'&&v))}; return c._liv; }
+  const m=(c.manufacturer||'').toLowerCase(), crawler=isCrawler(c);
+  const keys=Object.keys(LIVERIES);
+  const score=k=>{ const kl=k.toLowerCase(); let s=0;
+    if (kl===m) s+=10; else if (kl.startsWith(m)||m.startsWith(kl.split(' ')[0])||kl.includes(m)||m.includes(kl.split(' ').slice(-1)[0])) s+=5; else return 0;
+    if (/crawler/.test(kl)) s += crawler?3:-3; return s; };
+  const best=keys.map(k=>[k,score(k)]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1])[0];
+  c._liv = {...LIVERY_DEFAULT, ...(best?LIVERIES[best[0]]:{})};
+  for (const k in c._liv) if (c._liv[k]==null) c._liv[k]=LIVERY_DEFAULT[k];
+  return c._liv;
+}
+function isCrawler(c){ return c.type==='CR'||c.type==='TCR'; }
+function evenAxles(len,n,type){ const fo=type==='RT'?2.4:2.3, ro=type==='RT'?2.4:2.0; if(n<=1) return [len/2]; const out=[]; for(let i=0;i<n;i++) out.push(fo+i*(len-fo-ro)/(n-1)); return out; }
+function shape(c){
+  if (c._shape) return c._shape;
+  const cap=c.maxCapacity_t||50, d=c.dims||{}, crawler=isCrawler(c);
+  const lattice=(c.boomType||(c.type==='CR'?'lattice':'telescopic'))==='lattice';
+  const s={ crawler, lattice, cap, measured:[] };
+  const pick=(key,fallback)=>{ const v=d[key]; if(v!=null&&isFinite(v)&&v!==0){ s.measured.push(key); return +v; } return fallback; };
+  if (crawler){
+    s.trackL=pick('trackLength_m', clamp(5.2+0.011*cap,4.5,14));
+    s.trackH=pick('trackHeight_m', clamp(0.95+0.0012*cap,0.9,2.2));
+    s.tail=pick('tailSwingRadius_m', clamp(3.6+0.005*cap,3.4,9));
+    s.h0=pick('boomPivotHeight_m', +(s.trackH+1.0+0.0012*cap).toFixed(2));
+    s.a=(d.boomPivotOffset_m!=null)?(s.measured.push('boomPivotOffset_m'),+d.boomPivotOffset_m):+(lattice?0.9+0.0015*cap:-(1.6+0.003*cap)).toFixed(2);
+  } else {
+    const n=c.axles||(c.type==='RT'?2:3);
+    s.len=pick('overallLength_m', c.type==='RT'?10.5+0.012*cap:6.5+1.55*n);
+    s.axles=(Array.isArray(d.axlePositions_m)&&d.axlePositions_m.length)?(s.measured.push('axlePositions_m'),d.axlePositions_m):evenAxles(s.len,n,c.type);
+    s.wheelD=pick('wheelDiameter_m', c.type==='RT'?1.55:c.type==='TC'?1.1:1.4);
+    s.slew=pick('slewCentreFromFront_m', s.len*(c.type==='RT'?0.5:0.6));
+    s.tail=pick('tailSwingRadius_m', clamp(3.2+0.004*cap,3,7));
+    s.h0=pick('boomPivotHeight_m', +(2.9+0.0025*cap).toFixed(2));
+    s.a=(d.boomPivotOffset_m!=null)?(s.measured.push('boomPivotOffset_m'),+d.boomPivotOffset_m):-+(2.2+0.003*cap).toFixed(2);
+    s.span=(c.outriggerSpan_m&&c.outriggerSpan_m[0])||s.len*0.62;
+  }
+  s.sections=d.telescopicSections||(cap<40?4:cap<90?5:cap<200?6:7);
+  s.boomH=lattice?clamp(1.1+0.0025*cap,1.1,3.2):clamp(0.72+0.0022*cap,0.7,2.2);
+  s.Lmin=(c.boomLengths_m&&c.boomLengths_m[0])||10;
+  s.cwH=clamp((crawler?1.2:0.6)+0.012*(c.counterweight_t||cap*0.3), crawler?1.2:0.6, crawler?4.5:2.6);
+  s.minX=crawler?-Math.max(s.trackL/2,s.tail)-0.5:-s.slew-0.5;
+  c._shape=s; return s;
+}
+
+/* 측면도 그리기: 월드 좌표(m, 선회중심 x=0, 지면 y=0, 붐은 +x 방향) → SVG */
+function drawCrane(c, L, th, X, Y, k){
+  const s=shape(c), lv=livery(c), g=[];
+  const P=(x,y)=>`${X(x).toFixed(1)},${Y(y).toFixed(1)}`;
+  const poly=(pts,a)=>`<polygon points="${pts.map(p=>P(p[0],p[1])).join(' ')}" ${a}/>`;
+  const rect=(x0,y0,x1,y1,a,rx=0)=>`<rect x="${X(Math.min(x0,x1)).toFixed(1)}" y="${Y(Math.max(y0,y1)).toFixed(1)}" width="${(Math.abs(x1-x0)*k).toFixed(1)}" height="${(Math.abs(y1-y0)*k).toFixed(1)}" rx="${(rx*k).toFixed(1)}" ${a}/>`;
+  const circ=(x,y,r,a)=>`<circle cx="${X(x).toFixed(1)}" cy="${Y(y).toFixed(1)}" r="${Math.max(0.6,r*k).toFixed(1)}" ${a}/>`;
+  const line=(x0,y0,x1,y1,a)=>`<line x1="${X(x0).toFixed(1)}" y1="${Y(y0).toFixed(1)}" x2="${X(x1).toFixed(1)}" y2="${Y(y1).toFixed(1)}" ${a}/>`;
+  const edge='stroke="rgba(0,0,0,.28)" stroke-width="0.6"';
+  const glass='#8FB6CF', steel='#D9D9DE', wood='#8A6A43';
+  const cu=Math.cos(th), su=Math.sin(th), a=s.a, h0=s.h0;
+  const bp=(t,o)=>[a+t*cu-o*su, h0+t*su+o*cu];
+  let deckY;
+
+  if (!s.crawler){
+    // ---- 차량(캐리어) ----
+    const front=-s.slew, rear=s.len-s.slew, r=s.wheelD/2, lift=0.1, yc=r+lift, ra=r*1.1;
+    const fb=yc, ft=fb+ra+0.4; deckY=ft;
+    const wx=s.axles.map(p=>front+p).sort((a,b)=>a-b);
+    // 바퀴 (차체보다 먼저 그려 휠아치 뒤로)
+    wx.forEach(x=>{ g.push(circ(x,yc,r,`fill="#1F1F22"`)); g.push(circ(x,yc,r*0.55,`fill="#8E8E93"`)); g.push(circ(x,yc,r*0.2,`fill="#4A4A4E"`)); });
+    // 아웃트리거 + 받침판 + 매트
+    const ox=[clamp(-s.span/2,front+0.6,rear-0.6), clamp(s.span/2,front+0.6,rear-0.6)];
+    ox.forEach(x=>{ g.push(rect(x-0.8,0,x+0.8,0.06,`fill="${wood}"`));
+      g.push(rect(x-0.38,0.06,x+0.38,0.18,`fill="${lv.chassisDark}"`));
+      g.push(rect(x-0.15,0.18,x+0.15,fb+0.3,`fill="${steel}" ${edge}`)); });
+    // 차체: 윗면 ft, 아랫면 fb, 바퀴 위치에 휠아치 (가까운 축은 한 아치로)
+    const groups=[]; wx.forEach(x=>{ const gq=groups[groups.length-1]; if(gq && x-gq[1] < 2*ra+0.25) gq[1]=x; else groups.push([x,x]); });
+    let d=`M${P(front+0.2,ft)} L${P(rear,ft)} L${P(rear,fb)}`;
+    for(let q=groups.length-1;q>=0;q--){ const [xs,xe]=groups[q]; const R_=(ra*k).toFixed(1);
+      d+=` L${P(xe+ra,fb)} A${R_} ${R_} 0 0 0 ${P(xe,fb+ra)} L${P(xs,fb+ra)} A${R_} ${R_} 0 0 0 ${P(xs-ra,fb)}`; }
+    d+=` L${P(front+0.2,fb)} Z`;
+    g.push(`<path d="${d}" fill="${lv.carrier}" ${edge}/>`);
+    if (lv.chassisLight) g.push(rect(front+2.4,fb,rear,fb+0.18,`fill="${lv.chassisLight}"`));
+    g.push(rect(front+0.2,ft-0.12,rear,ft,`fill="${lv.chassisDark}" opacity=".35"`));
+    if (lv.stripe) g.push(rect(front+2.4,ft-0.38,rear-0.2,ft-0.26,`fill="${lv.stripe}"`));
+    ox.forEach(x=>g.push(rect(x-0.32,fb-0.05,x+0.32,fb+0.4,`fill="${lv.chassisDark}"`)));
+    // 운전실 (AT/TC: 전방 캐리어 운전실, RT: 없음)
+    if (c.type!=='RT'){
+      const cl=c.type==='TC'?2.3:2.2, ch=c.type==='TC'?1.75:1.45;
+      g.push(poly([[front,fb-0.25],[front,ft+ch-0.35],[front+0.3,ft+ch],[front+cl,ft+ch],[front+cl,fb-0.25]],`fill="${lv.cab}" ${edge}`));
+      g.push(poly([[front+0.12,ft+0.1],[front+0.12,ft+ch-0.4],[front+0.38,ft+ch-0.1],[front+cl-0.2,ft+ch-0.1],[front+cl-0.2,ft+0.1]],`fill="${glass}" opacity=".9"`));
+      g.push(rect(front+0.05,fb-0.25,front+0.35,fb+0.25,`fill="${lv.chassisDark}"`));
+    }
+  } else {
+    // ---- 크롤러 트랙 ----
+    const tl=s.trackL, h=s.trackH, rr=h/2, x0=-tl/2, x1=tl/2;
+    g.push(`<path d="M${P(x0+rr,0)} L${P(x1-rr,0)} A${rr*k} ${rr*k} 0 0 0 ${P(x1-rr,h)} L${P(x0+rr,h)} A${rr*k} ${rr*k} 0 0 0 ${P(x0+rr,0)} Z" fill="${lv.chassisDark}"/>`);
+    g.push(`<path d="M${P(x0+rr,0.06)} L${P(x1-rr,0.06)} A${(rr-0.06)*k} ${(rr-0.06)*k} 0 0 0 ${P(x1-rr,h-0.06)} L${P(x0+rr,h-0.06)} A${(rr-0.06)*k} ${(rr-0.06)*k} 0 0 0 ${P(x0+rr,0.06)} Z" fill="none" stroke="#6E6E73" stroke-width="${Math.max(1,0.1*k).toFixed(1)}" stroke-dasharray="${Math.max(1.5,0.18*k).toFixed(1)} ${Math.max(1,0.1*k).toFixed(1)}"/>`);
+    g.push(circ(x1-rr,rr,rr*0.72,`fill="#48484C"`)); g.push(circ(x0+rr,rr,rr*0.72,`fill="#48484C"`));
+    const nr=Math.max(3,Math.round((tl-h)/0.9)); for(let i=1;i<nr;i++){ const x=x0+rr+i*(tl-h)/nr; g.push(circ(x,0.28,0.2,`fill="#5A5A5F"`)); }
+    g.push(rect(-Math.min(tl*0.32,2.4),h,Math.min(tl*0.32,2.4),h+0.5,`fill="${lv.chassisDark}"`));
+    deckY=h+0.5;
+  }
+
+  // ---- 상부 선회체 ----
+  const cap=s.cap, tail=s.tail, cw=s.cwH;
+  g.push(rect(-1.1,deckY,1.1,deckY+0.3,`fill="#3A3A3E"`));
+  const bodyTop = s.crawler ? deckY+0.3+clamp(1.8+0.002*cap,1.8,3.4) : Math.max(deckY+0.95, h0-0.15);
+  const bodyFront = s.crawler ? 1.2+0.0015*cap : 1.4;
+  g.push(poly([[-tail+0.2,deckY+0.3],[-tail+0.2,bodyTop],[bodyFront-0.2,bodyTop],[bodyFront,bodyTop-0.25],[bodyFront,deckY+0.3]],`fill="${lv.superstructure}" ${edge}`));
+  // 카운터웨이트 (슬래브)
+  const cwW=s.crawler?1.4+0.0012*cap:1.05, cwTop=deckY+0.3+cw;
+  g.push(rect(-tail,deckY+0.3,-tail+cwW,cwTop,`fill="${lv.counterweight}" ${edge}`,0.06));
+  const nsl=Math.max(2,Math.round(cw/0.4)); for(let i=1;i<nsl;i++){ const y=deckY+0.3+i*cw/nsl; g.push(line(-tail,y,-tail+cwW,y,'stroke="rgba(255,255,255,.22)" stroke-width="0.8"')); }
+  // 조종실
+  const cabX0=s.crawler?0.35:0.5, cabX1=cabX0+(s.crawler?1.7:1.6), cabY0=deckY+0.35, cabY1=cabY0+(s.crawler?2.0:1.75);
+  g.push(poly([[cabX0,cabY0],[cabX0,cabY1],[cabX1-0.35,cabY1],[cabX1,cabY1-0.6],[cabX1,cabY0]],`fill="${lv.cab}" ${edge}`));
+  g.push(poly([[cabX0+0.55,cabY0+0.55],[cabX0+0.55,cabY1-0.12],[cabX1-0.4,cabY1-0.12],[cabX1-0.1,cabY1-0.62],[cabX1-0.1,cabY0+0.55]],`fill="${glass}" opacity=".9"`));
+
+  if (s.lattice){
+    // ---- 격자 붐 + 갠트리 + 펜던트 ----
+    const gx0=-tail+cwW+0.2, peakX=-tail+cwW+0.7, peakY=bodyTop+clamp(2.2+0.004*cap,2.2,6);
+    g.push(line(gx0,bodyTop,peakX,peakY,`stroke="${lv.superstructure}" stroke-width="${Math.max(2,0.35*k).toFixed(1)}" stroke-linecap="round"`));
+    g.push(line(bodyFront-0.8,bodyTop,peakX,peakY,`stroke="${lv.superstructure}" stroke-width="${Math.max(2,0.3*k).toFixed(1)}" stroke-linecap="round"`));
+    const H=s.boomH, butt=Math.min(6,0.18*L), top=Math.min(5,0.12*L);
+    const hw=t=> (t<butt? 0.5+0.5*t/butt : t>L-top? 1-0.4*(t-(L-top))/top : 1)*H/2;
+    const tip=bp(L,hw(L)); g.push(line(peakX,peakY,tip[0],tip[1],`stroke="#6E6E73" stroke-width="0.9"`));
+    const mid=bp(L*0.5,hw(L*0.5)); g.push(line(peakX,peakY-0.2,tip[0]+0.1,tip[1]-0.1,`stroke="#6E6E73" stroke-width="0.6"`));
+    const n=Math.max(8,Math.round(L/(H*1.05)));
+    let lace=''; for(let i=0;i<=n;i++){ const t=L*i/n; const q=bp(t,(i%2?1:-1)*hw(t)); lace+=(i?' L':'M')+P(q[0],q[1]); }
+    g.push(`<path d="${lace}" fill="none" stroke="${lv.boom}" stroke-width="${Math.max(0.6,0.07*k).toFixed(1)}" stroke-linejoin="round"/>`);
+    const chord=sgn=>{ let d=''; for(let i=0;i<=24;i++){ const t=L*i/24; const q=bp(t,sgn*hw(t)); d+=(i?' L':'M')+P(q[0],q[1]); } return d; };
+    [1,-1].forEach(sg=>g.push(`<path d="${chord(sg)}" fill="none" stroke="${lv.boom}" stroke-width="${Math.max(1.4,0.16*k).toFixed(1)}" stroke-linecap="round"/>`));
+    const hd=[bp(L-0.9,-hw(L)),bp(L-0.9,hw(L)),bp(L+0.2,hw(L)*0.7),bp(L+0.2,-hw(L)*0.7)];
+    g.push(poly(hd,`fill="${lv.boom}" ${edge}`));
+  } else {
+    // ---- 텔레스코픽 붐 + 기복 실린더 ----
+    const n=s.sections, H=s.boomH, head=0.6+0.0012*cap, baseEnd=Math.min(L-head, s.Lmin*0.93);
+    const segs=[]; let prevEnd=baseEnd;
+    segs.push({t0:-0.9,t1:baseEnd,h:H});
+    for(let i=1;i<n;i++){ const end = baseEnd + i*(L-head-baseEnd)/(n-1); segs.push({t0:Math.max(0.5,prevEnd-1.2-(n-i)*0.2)-0.001*i,t1:end,h:H*Math.pow(0.88,i)}); prevEnd=end; }
+    // 기복 실린더
+    const cylB=[bodyFront-0.3+0.002*cap, deckY+0.45], at=bp(Math.min(0.42*s.Lmin,0.42*L),-H/2);
+    const cm=[cylB[0]+(at[0]-cylB[0])*0.62, cylB[1]+(at[1]-cylB[1])*0.62];
+    g.push(line(cylB[0],cylB[1],at[0],at[1],`stroke="${steel}" stroke-width="${Math.max(2,(0.18+0.0005*cap)*k).toFixed(1)}" stroke-linecap="round"`));
+    g.push(line(cylB[0],cylB[1],cm[0],cm[1],`stroke="${lv.boom}" stroke-width="${Math.max(3,(0.34+0.0008*cap)*k).toFixed(1)}" stroke-linecap="round"`));
+    // 가장 안쪽 단부터 그려 바깥 단이 겹쳐 보이게
+    for(let i=segs.length-1;i>=0;i--){ const q=segs[i], hh=q.h/2;
+      g.push(poly([bp(q.t0,-hh),bp(q.t1,-hh),bp(q.t1,hh),bp(q.t0,hh)],`fill="${lv.boom}" ${edge}`));
+      const s0=bp(q.t0+0.1,hh-0.1), s1=bp(q.t1-0.1,hh-0.1); g.push(line(s0[0],s0[1],s1[0],s1[1],'stroke="rgba(255,255,255,.35)" stroke-width="0.8"'));
+    }
+    const hh=segs[segs.length-1].h/2;
+    g.push(poly([bp(L-head,-hh*1.1),bp(L-head,hh*1.15),bp(L+0.1,hh*0.9),bp(L+0.35,0),bp(L+0.1,-hh*1.1)],`fill="${lv.boom}" ${edge}`));
+    if (lv.stripe){ const p0=bp(0.8,-H/2+0.12), p1=bp(baseEnd-0.4,-H/2+0.12); g.push(line(p0[0],p0[1],p1[0],p1[1],`stroke="${lv.stripe}" stroke-width="${Math.max(1,0.1*k).toFixed(1)}"`)); }
+  }
+  // 붐 풋핀, 헤드 시브
+  g.push(circ(a,h0,0.22,`fill="#3A3A3E"`));
+  const sh=bp(L,0); g.push(circ(sh[0],sh[1],0.16+0.0004*cap,`fill="#4A4A4E" stroke="${steel}" stroke-width="0.6"`));
+  return g.join('');
+}
+function hookBlockSVG(c, x, y, X, Y, k){
+  const cap=c.maxCapacity_t||50, lv=livery(c), w=0.45+0.0012*cap, h=0.8+0.0015*cap, top=y+0.35+h;
+  const P=(xx,yy)=>`${X(xx).toFixed(1)},${Y(yy).toFixed(1)}`;
+  return `<rect x="${X(x-w/2).toFixed(1)}" y="${Y(top).toFixed(1)}" width="${Math.max(6,w*k).toFixed(1)}" height="${Math.max(7,h*k).toFixed(1)}" rx="${Math.max(1.5,0.08*k).toFixed(1)}" fill="${lv.boom}" stroke="rgba(0,0,0,.35)" stroke-width="0.6"/>`+
+    `<path d="M${P(x,y+0.35)} L${P(x,y+0.12)} Q${P(x,y-0.12)} ${P(x+0.16,y-0.02)}" fill="none" stroke="#3A3A3E" stroke-width="${Math.max(1.5,0.09*k).toFixed(1)}" stroke-linecap="round"/>`;
+}
+function hookTop(c, y){ const cap=c.maxCapacity_t||50; return y+0.35+0.8+0.0015*cap; }
+
+// 붐 풋핀 높이 h0, 선회중심~풋핀 수평거리 a(+: 붐 쪽, −: 카운터웨이트 쪽) — 제원표 치수도 값 우선, 없으면 형식·등급별 근사
+function geo(c){ const s=shape(c); return { h0:s.h0, a:s.a }; }
+// 정격 총하중표는 훅블록 포함 총하중 기준 → 항상 인양하중에 가산 (보수적)
+function hookEst(c,S){ return Math.max(0.2, Math.round(c.maxCapacity_t*S.hookPct/100*10)/10); }
+
+function evaluate(c, lift, S){
+  const hb = hookEst(c,S);
+  const W = (+lift.w||0) + (+lift.rig||0) + hb;
+  const {h0,a} = geo(c);
+  const R = +lift.R||0;
+  const rows = c.radii_m;
+  const base = { W, hb, h0, a };
+  if (!rows?.length) return {...base, status:'geom', reason:'차트 없음'};
+  if (R < rows[0]) return {...base, status:'geom', reason:`최소 작업반경(${f1(rows[0])} m) 미만`};
+  const ri = rows.findIndex(r => r >= R - 1e-6);
+  if (ri < 0) return {...base, status:'geom', reason:`최대 작업반경(${f1(rows[rows.length-1])} m) 초과`};
+  const hasObs = lift.obs && lift.od > 0 && lift.od < R;
+  const loadBottom = Math.max(+lift.H||0, hasObs ? (+lift.oh||0) + S.obsClear : 0);
+  const needHook = loadBottom + (+lift.lh||0) + S.slingH;
+  const needTip = needHook + S.headClear;
+  let best=null, reason='해당 반경 정격하중 없음';
+  c.boomLengths_m.forEach((L,j)=>{
+    const cap = c.capacity_t[ri]?.[j];
+    if (cap==null) return;
+    const cos = (R - a) / L;
+    if (cos >= 1 || cos <= 0) { reason='붐 길이 부족'; return; }
+    const th = Math.acos(cos), deg = th*180/Math.PI;
+    const tip = h0 + L*Math.sin(th);
+    if (tip < needTip) { reason='인양 높이 부족'; return; }
+    let obsM = null;
+    if (hasObs) { obsM = h0 + (lift.od - a)*Math.tan(th) - ((+lift.oh||0) + S.obsClear); if (obsM < 0) { reason='붐·장애물 간섭'; return; } }
+    const cand = { L, j, deg, tip, cap, obsM, hookM: tip-needTip, needHook, loadBottom, chartR: rows[ri] };
+    if (!best || cap > best.cap) best = cand;
+  });
+  if (!best) return {...base, status:'geom', reason, needHook, loadBottom};
+  const U = W / best.cap;
+  const status = U > S.limit ? 'over' : (U > S.critical ? 'caution' : 'ok');
+  return {...base, ...best, U, status};
+}
+function activeCranes(){ const t=state.settings.types||{}; const a=CRANES.filter(c=>t[c.type]!==false); return a.length?a:CRANES; }
+function recommend(lift){
+  const S = state.settings;
+  const res = activeCranes().map(c => ({ c, r: evaluate(c, lift, S) }));
+  const ok = res.find(x=>x.r.status==='ok');
+  const caution = res.find(x=>x.r.status==='caution');
+  const pick = ok || caution || null;
+  // 적합 크레인보다 작은 등급의 '주의' 대안
+  const alt = (ok && caution && caution.c.maxCapacity_t < ok.c.maxCapacity_t) ? caution : null;
+  return { res, pick, alt };
+}
+
+/* ---------- views ---------- */
+function setView(v){
+  state.view = v; save();
+  document.body.classList.toggle('view-lift', v==='lift');
+  ['summary','db','method'].forEach(n=>document.body.classList.toggle('view-'+n, v===n));
+  try{ history.replaceState(null,'','#'+v); }catch(e){}
+  document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.view===v)));
+  render();
+  window.scrollTo({top:0});
+}
+function render(){
+  const v = state.view;
+  if (!CRANES.length) { $('#view').innerHTML = '<div class="empty">크레인 데이터가 없습니다.</div>'; return; }
+  if (v==='lift') renderLift();
+  else if (v==='summary') renderSummary();
+  else if (v==='db') renderDB();
+  else renderMethod();
+}
+
+/* ----- 양중 검토 ----- */
+function currentLift(){ return state.lifts.find(l=>l.id===state.sel) || state.lifts[0]; }
+function sidebarHTML(){
+  const items = state.lifts.map(l=>{
+    const {pick} = recommend(l);
+    const st = pick ? pick.r.status : 'none';
+    const cur = l.id===currentLift()?.id;
+    return `<button class="row list-btn" data-lift="${l.id}" aria-current="${cur}" type="button">
+      <span class="dot ${st}" aria-hidden="true"></span>
+      <span class="lbl"><span>${esc(l.name)||'이름 없음'}</span>
+        <span class="sub num">${f1(l.w)} t · R ${f1(l.R)} m · H ${f1(l.H)} m</span>
+        <span class="sub side-pick">${pick?esc(pick.c.model):'적합 크레인 없음'}</span></span>
+      <svg class="chev" width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5l5 5-5 5"/></svg>
+    </button>`;
+  }).join('');
+  return `<aside class="sidebar">
+    <div class="side-head"><h2>중량물</h2><button class="btn-plain" id="addLift" type="button">＋ 추가</button></div>
+    <div class="group">${items || '<div class="empty">중량물을 추가하세요</div>'}</div>
+    <p class="caption">${state.sample?'예시 프로젝트 데이터입니다. 값을 바꾸면 이 브라우저에 저장됩니다.':'이 브라우저에 자동 저장됩니다.'}</p>
+  </aside>`;
+}
+function inputRow(id, label, val, unit, sub){
+  return `<label class="row" for="${id}"><span class="lbl">${label}${sub?`<span class="sub">${sub}</span>`:''}</span>
+    <span class="field"><input id="${id}" data-k="${id.replace('in-','')}" type="number" inputmode="decimal" step="0.1" min="0" value="${val}"><span class="unit">${unit}</span></span></label>`;
+}
+function renderLift(){
+  const l = currentLift();
+  if (!l){ $('#view').innerHTML = `<div class="split">${sidebarHTML()}<section><div class="card empty">왼쪽에서 중량물을 추가하세요.</div></section></div>`; bindLift(); return; }
+  $('#view').innerHTML = `<div class="split">${sidebarHTML()}
+  <section>
+    <div class="title-wrap"><p class="eyebrow">양중 검토</p>
+      <input class="title-input" id="in-name" data-k="name" value="${esc(l.name)}" aria-label="중량물 이름" autocomplete="off"></div>
+    <div class="detail-grid">
+      <div>
+        <p class="section-label">인양물</p>
+        <div class="group">
+          ${inputRow('in-w','중량',l.w,'t')}
+          ${inputRow('in-rig','줄걸이·부속 중량',l.rig,'t','슬링·샤클·스프레더 등')}
+          ${inputRow('in-lw','폭',l.lw,'m')}
+          ${inputRow('in-lh','높이',l.lh,'m')}
+        </div>
+        <p class="section-label">위치</p>
+        <div class="group">
+          ${inputRow('in-R','작업반경 R',l.R,'m','선회중심 ~ 인양물 중심')}
+          ${inputRow('in-H','설치 높이',l.H,'m','지반 ~ 인양물 하단')}
+        </div>
+        <p class="section-label">장애물</p>
+        <div class="group">
+          <label class="row" for="in-obs"><span class="lbl">붐이 넘어가는 장애물<span class="sub">건물 외벽, 파라펫 등</span></span>
+            <span class="switch"><input type="checkbox" id="in-obs" data-k="obs" ${l.obs?'checked':''}><span></span></span></label>
+          <div id="obsRows" ${l.obs?'':'hidden'}>
+            ${inputRow('in-od','수평거리',l.od,'m','선회중심 ~ 장애물 모서리')}
+            ${inputRow('in-oh','높이',l.oh,'m')}
+          </div>
+        </div>
+        <p class="caption">총 인양하중 = 중량 + 줄걸이·부속 + 훅블록(크레인별 추정)</p>
+        <div class="group" style="margin-top:22px"><button class="danger" id="delLift" type="button">중량물 삭제</button></div>
+      </div>
+      <div class="stack" id="results"></div>
+    </div>
+  </section></div>`;
+  bindLift();
+  renderResults();
+}
+function bindLift(){
+  document.querySelectorAll('[data-lift]').forEach(b=>b.onclick=()=>{ state.sel=b.dataset.lift; save(); renderLift(); });
+  const add=$('#addLift'); if(add) add.onclick=()=>{
+    const id='l'+Date.now().toString(36);
+    state.lifts.push({ id, name:'새 중량물', w:10, rig:0.3, lw:3, lh:2, R:15, H:10, obs:false, od:0, oh:0 });
+    state.sel=id; state.sample=false; save(); renderLift(); setTimeout(()=>{ const t=$('#in-name'); t&&t.select(); },0);
+  };
+  const del=$('#delLift'); if(del) del.onclick=()=>{
+    if (del.dataset.armed!=='1'){ del.dataset.armed='1'; del.textContent='한 번 더 누르면 삭제됩니다'; setTimeout(()=>{ if(del.isConnected){ del.dataset.armed=''; del.textContent='중량물 삭제'; } },3000); return; }
+    const i=state.lifts.findIndex(x=>x.id===state.sel); state.lifts.splice(i,1);
+    state.sel=state.lifts[Math.max(0,i-1)]?.id; state.sample=false; save(); renderLift(); toast('삭제했습니다');
+  };
+  document.querySelectorAll('.detail-grid input[data-k], #in-name').forEach(inp=>{
+    inp.addEventListener('input',()=>{
+      const l=currentLift(); const k=inp.dataset.k;
+      if (k==='name') l.name=inp.value;
+      else if (k==='obs'){ l.obs=inp.checked; $('#obsRows').hidden=!l.obs; if(l.obs && !l.od){ l.od=Math.round(l.R*0.6); l.oh=l.H; $('#in-od').value=l.od; $('#in-oh').value=l.oh; } }
+      else { const v=parseFloat(inp.value); l[k]=isFinite(v)?v:0; if(k==='w' && document.activeElement===inp && l._autoRig!==false){ /* keep user rig */ } }
+      state.sample=false; save();
+      renderResults(); refreshSidebar();
+    });
+  });
+}
+function refreshSidebar(){ const sb=document.querySelector('.sidebar'); if(!sb) return; const tmp=document.createElement('div'); tmp.innerHTML=sidebarHTML(); sb.replaceWith(tmp.firstElementChild); document.querySelectorAll('[data-lift]').forEach(b=>b.onclick=()=>{ state.sel=b.dataset.lift; save(); renderLift(); }); const add=$('#addLift'); if(add) add.onclick=()=>{ const id='l'+Date.now().toString(36); state.lifts.push({ id, name:'새 중량물', w:10, rig:0.3, lw:3, lh:2, R:15, H:10, obs:false, od:0, oh:0 }); state.sel=id; state.sample=false; save(); renderLift(); }; }
+
+function renderResults(){
+  const l=currentLift(); const S=state.settings;
+  const {res,pick,alt} = recommend(l);
+  // 적합 크레인이 없으면 사용률이 가장 낮은 크레인, 그것도 없으면 최대 용량 크레인을 보여줌
+  const fallback = pick || res.filter(x=>x.r.U!=null).sort((a,b)=>a.r.U-b.r.U)[0] || res[res.length-1];
+  const previewId = state.preview[l.id] && res.find(x=>x.c.id===state.preview[l.id]) ? state.preview[l.id] : fallback.c.id;
+  const shown = res.find(x=>x.c.id===previewId) || fallback;
+  const r = shown.r, c = shown.c;
+  const isPick = pick && shown.c.id===pick.c.id;
+  const st = r.status;
+  const hero = `<div class="card">
+    <div class="hero">
+      <div><p class="k">${isPick?'최소 적정 크레인':(!pick&&shown===fallback?'가장 근접한 크레인':'선택한 크레인')}</p>
+        <h3>${esc(c.model)}<small>${esc(c.manufacturer)} · ${f0(c.maxCapacity_t)} t급</small></h3>
+        <div style="margin-top:8px"><span class="pill ${st}">${STATUS[st]}</span></div></div>
+      <div><p class="k" style="text-align:right">정격하중 사용률</p><div class="big-u num">${r.U!=null?Math.round(r.U*100):'–'}<small>%</small></div></div>
+    </div>
+    ${r.U!=null?`<div style="margin-top:14px"><div class="bar"><i class="${st}" style="width:${Math.min(100,r.U*100)}%"></i><span class="lim" style="left:${S.limit*100}%"></span></div></div>`:''}
+    <div class="metrics">
+      <div class="metric"><p class="k">총 인양하중</p><p class="v num">${f1(r.W)}<small>t</small></p></div>
+      <div class="metric"><p class="k">정격하중</p><p class="v num">${f1(r.cap)}<small>t</small></p></div>
+      <div class="metric"><p class="k">붐 길이</p><p class="v num">${f1(r.L)}<small>m</small></p></div>
+      <div class="metric"><p class="k">붐 각도</p><p class="v num">${f1(r.deg)}<small>°</small></p></div>
+    </div>
+    <p class="note">${r.status==='geom' ? `<b>불가 사유:</b> ${esc(r.reason)}` :
+      `훅블록 ${f1(r.hb)} t(추정) 포함 · 차트 반경 ${f1(r.chartR)} m 적용 · 붐 헤드 높이 ${f1(r.tip)} m (여유 ${f1(r.hookM)} m)${r.obsM!=null?` · 장애물 이격 여유 ${f1(r.obsM)} m`:''}`}</p>
+    ${!pick?`<p class="note"><b>검토 결과:</b> 등록된 크레인으로는 조건을 만족하지 못합니다. 작업반경을 줄이거나(크레인 위치 이동) 더 큰 크레인 데이터를 추가하세요.</p>`:''}
+    ${alt && isPick?`<p class="note"><b>대안:</b> ${esc(alt.c.model)} (${f0(alt.c.maxCapacity_t)} t급)도 사용률 ${pct(alt.r.U)}로 가능하나 Critical Lift 계획이 필요합니다.</p>`:''}
+  </div>`;
+  const diag = `<div class="card"><div class="chart-head"><h4>단면도</h4><span>${esc(c.model)} · 개략 형상</span></div>${elevationSVG(c,r,l)}</div>`;
+  const curve = r.j!=null ? `<div class="card"><div class="chart-head"><h4>하중 곡선</h4><span>붐 ${f1(r.L)} m · ${esc(c.chartConfig||'')}</span></div>${curveSVG(c,r,l)}</div>` : '';
+  const fit = res.filter(x=>x.r.status==='ok'||x.r.status==='caution');
+  let shownList = state.candFilter==='all' ? res : (fit.length ? fit : res.filter(x=>x.r.U!=null).sort((a,b)=>a.r.U-b.r.U).slice(0,6));
+  const list = `<div><div class="chart-head" style="padding:0 4px;margin:22px 0 6px"><span style="font-size:13px">크레인별 검토 · ${state.candFilter==='all'?`전체 ${res.length}종`:(fit.length?`적합 ${fit.length}종`:'적합 없음 · 근접 6종')}</span>
+      <div class="seg" role="group" aria-label="목록 범위" style="margin:0"><button type="button" data-cf="fit" aria-selected="${state.candFilter!=='all'}">적합</button><button type="button" data-cf="all" aria-selected="${state.candFilter==='all'}">전체</button></div></div>
+    <div class="group cands">${shownList.map(x=>{
+      const rr=x.r; const w=rr.U!=null?Math.min(100,rr.U*100):0;
+      return `<button class="row cand-btn" data-crane="${x.c.id}" aria-pressed="${x.c.id===shown.c.id}" type="button">
+        <span class="dot ${rr.status}" aria-hidden="true"></span>
+        <span class="cand-main">
+          <span class="cand-top"><span class="cand-name">${esc(x.c.model)}<small>${esc(x.c.manufacturer)} · ${typeName(x.c.type)} · ${f0(x.c.maxCapacity_t)} t</small></span>${pick&&x.c.id===pick.c.id?'<span class="rec-tag">추천</span>':''}</span>
+          ${rr.U!=null?`<span class="bar"><i class="${rr.status}" style="width:${w}%"></i><span class="lim" style="left:${S.limit*100}%"></span></span>
+          <span class="cand-meta num">붐 ${f1(rr.L)} m · ${f1(rr.deg)}° · 정격 ${f1(rr.cap)} t</span>`:`<span class="cand-meta">${esc(rr.reason)}</span>`}
+        </span>
+        <span class="cand-u num">${rr.U!=null?pct(rr.U):'–'}</span>
+      </button>`;}).join('')}</div>
+      <p class="caption">세로선은 사용한계 ${Math.round(S.limit*100)}%. 행을 누르면 단면도와 하중 곡선이 바뀝니다.</p></div>`;
+  $('#results').innerHTML = hero + diag + curve + list;
+  document.querySelectorAll('[data-crane]').forEach(b=>b.onclick=()=>{ state.preview[l.id]=b.dataset.crane; renderResults(); });
+  document.querySelectorAll('[data-cf]').forEach(b=>b.onclick=()=>{ state.candFilter=b.dataset.cf; renderResults(); });
+}
+
+/* ----- SVG: 단면도 ----- */
+function elevationSVG(c, r, l){
+  const W=720, H=400, pad=30;
+  const sh=shape(c), {h0,a} = geo(c);
+  const R=+l.R||0, lw=Math.max(0.5,+l.lw||1), lh=Math.max(0.3,+l.lh||1);
+  const hasL = r.L!=null;
+  const maxBoom = c.boomLengths_m[c.boomLengths_m.length-1];
+  const L = hasL ? r.L : clamp(Math.max(R-a,1)*1.35, sh.Lmin, maxBoom);
+  const th = hasL ? r.deg*Math.PI/180 : Math.acos(clamp((R-a)/L, 0.05, 0.99));
+  const tipX = a + L*Math.cos(th), tipY = h0 + L*Math.sin(th);
+  const loadBottom = r.loadBottom ?? Math.max(+l.H||0, 0);
+  const hookY = loadBottom + lh + state.settings.slingH;
+  const obs = l.obs && l.od>0;
+  const maxX = Math.max(tipX+1, R+lw/2, obs? Math.max(l.od+8, R+lw/2+4):0, (+l.H>0.5)? R+lw/2+2:0) + 3;
+  const minX = sh.minX - 1;
+  const maxY = Math.max(tipY+1.5, hookY, obs?l.oh:0) + 2.5;
+  const k = Math.min((W-2*pad)/(maxX-minX), (H-2*pad-18)/maxY);
+  const X = x => pad + (x-minX)*k;
+  const Y = y => H - pad - 18 - y*k;
+  const g = [];
+  g.push(`<line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--ground)" stroke-width="1.5"/>`);
+  if (obs){
+    const x0=X(l.od), x1=X(maxX), yT=Y(l.oh);
+    g.push(`<rect x="${x0}" y="${yT}" width="${x1-x0}" height="${Y(0)-yT}" fill="var(--struct)" stroke="var(--struct-line)"/>`);
+    g.push(`<text x="${x0+8}" y="${yT+16}" font-size="11" fill="var(--label-2)">장애물 ${f1(l.oh)} m</text>`);
+  } else if ((+l.H||0) > 0.5){
+    const x0=X(R-lw/2-1), x1=X(R+lw/2+1), yT=Y(l.H);
+    g.push(`<rect x="${x0}" y="${yT}" width="${x1-x0}" height="${Y(0)-yT}" fill="var(--struct)" stroke="var(--struct-line)"/>`);
+  }
+  g.push(drawCrane(c, L, th, X, Y, k));
+  // 호이스트 로프(다중 걸이 표현) + 훅블록
+  const ht=hookTop(c,hookY), rw=Math.max(1.2,(0.12+0.0004*c.maxCapacity_t)*k);
+  g.push(`<line x1="${X(tipX)-rw}" y1="${Y(tipY)}" x2="${X(R)-rw}" y2="${Y(ht)}" stroke="var(--rope)" stroke-width="0.8"/><line x1="${X(tipX)+rw}" y1="${Y(tipY)}" x2="${X(R)+rw}" y2="${Y(ht)}" stroke="var(--rope)" stroke-width="0.8"/>`);
+  g.push(hookBlockSVG(c, R, hookY, X, Y, k));
+  // slings + load
+  const lx0=X(R-lw/2), lx1=X(R+lw/2), ly=Y(loadBottom+lh), ly1=Y(loadBottom);
+  g.push(`<path d="M${X(R)} ${Y(hookY)} L${lx0+2} ${ly} M${X(R)} ${Y(hookY)} L${lx1-2} ${ly}" stroke="var(--rope)" stroke-width="1" fill="none"/>`);
+  const loadCol = r.status==='ok'?'var(--ok-dot)':r.status==='caution'?'var(--warn-dot)':'var(--bad-dot)';
+  g.push(`<rect x="${lx0}" y="${ly}" width="${lx1-lx0}" height="${ly1-ly}" rx="3" fill="${loadCol}" fill-opacity=".22" stroke="${loadCol}" stroke-width="1.5"/>`);
+  g.push(`<text x="${(lx0+lx1)/2}" y="${ly-8}" font-size="11" text-anchor="middle" fill="var(--label)" font-weight="600">${f1(r.W)} t</text>`);
+  // dims: radius
+  const dy = H - pad + 4;
+  g.push(`<g stroke="var(--dim)" stroke-width="1"><line x1="${X(0)}" x2="${X(R)}" y1="${dy}" y2="${dy}"/><line x1="${X(0)}" x2="${X(0)}" y1="${dy-5}" y2="${dy+5}"/><line x1="${X(R)}" x2="${X(R)}" y1="${dy-5}" y2="${dy+5}"/></g>`);
+  g.push(`<line x1="${X(0)}" x2="${X(0)}" y1="${Y(0)}" y2="${dy}" stroke="var(--dim)" stroke-dasharray="2 3" stroke-width="1"/><line x1="${X(R)}" x2="${X(R)}" y1="${Y(0)}" y2="${dy}" stroke="var(--dim)" stroke-dasharray="2 3" stroke-width="1"/>`);
+  g.push(`<text x="${(X(0)+X(R))/2}" y="${dy-6}" font-size="12" text-anchor="middle" fill="var(--dim)" font-weight="600">R ${f1(R)} m</text>`);
+  // height dim at right of load
+  if (loadBottom>0.5){
+    const hxd = Math.min(W-12, lx1+16);
+    g.push(`<g stroke="var(--dim)" stroke-width="1"><line x1="${hxd}" x2="${hxd}" y1="${Y(0)}" y2="${ly1}"/><line x1="${hxd-5}" x2="${hxd+5}" y1="${ly1}" y2="${ly1}"/></g>`);
+    g.push(`<text x="${hxd-6}" y="${(Y(0)+ly1)/2}" font-size="12" text-anchor="end" fill="var(--dim)" font-weight="600">${f1(loadBottom)} m</text>`);
+  }
+  // boom labels
+  if (hasL){
+    const mx=(X(a)+X(tipX))/2, my=(Y(h0)+Y(tipY))/2, ang=-r.deg;
+    g.push(`<text transform="translate(${mx-10},${my-10}) rotate(${ang})" font-size="12" text-anchor="middle" fill="var(--label)" font-weight="600">붐 ${f1(L)} m</text>`);
+    const arcR=34, ax=X(a), ay=Y(h0);
+    g.push(`<path d="M${ax+arcR} ${ay} A${arcR} ${arcR} 0 0 0 ${ax+arcR*Math.cos(th)} ${ay-arcR*Math.sin(th)}" fill="none" stroke="var(--label-2)" stroke-width="1"/>`);
+    g.push(`<text x="${ax+arcR+6}" y="${ay-6}" font-size="11" fill="var(--label-2)">${f1(r.deg)}°</text>`);
+    g.push(`<text x="${X(tipX)+6}" y="${Y(tipY)-4}" font-size="11" fill="var(--label-2)">${f1(tipY)} m</text>`);
+  }
+  return `<svg class="fig" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(c.model)} 단면도: 작업반경 ${f1(R)} m, 붐 ${f1(L)} m">${g.join('')}</svg>`;
+}
+
+/* ----- SVG: 크레인 측면 형상 (DB) ----- */
+function profileSVG(c){
+  const sh=shape(c), H=340, pad=24; let W=720;
+  const L=sh.Lmin, th=(sh.lattice?62:55)*Math.PI/180;
+  const tipX=sh.a+L*Math.cos(th), tipY=sh.h0+L*Math.sin(th);
+  const minX=sh.minX-0.5, maxX=Math.max(tipX+2, sh.crawler?sh.trackL/2+1:s0(sh)+1), maxY=tipY+1.5;
+  function s0(x){ return x.len-x.slew; }
+  let k=Math.min((W-2*pad)/(maxX-minX),(H-2*pad-22)/maxY);
+  W=Math.max(460, Math.round((maxX-minX)*k+2*pad)); // 크레인 비례에 맞춰 캔버스 폭 결정
+  const X=x=>pad+(x-minX)*k, Y=y=>H-pad-22-y*k;
+  const g=[`<line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--ground)" stroke-width="1.5"/>`, drawCrane(c,L,th,X,Y,k)];
+  g.push(`<line x1="${X(tipX)}" y1="${Y(tipY)}" x2="${X(tipX)}" y2="${Y(Math.max(1.5,tipY*0.35))}" stroke="var(--rope)" stroke-width="0.8"/>`);
+  g.push(hookBlockSVG(c, tipX, Math.max(1.5,tipY*0.35)-1.2, X, Y, k));
+  // 축척 막대
+  const sb=niceMax(Math.max(1,(maxX-minX)/6)), sx=W-pad-sb*k, sy=H-10;
+  g.push(`<line x1="${sx}" x2="${W-pad}" y1="${sy}" y2="${sy}" stroke="var(--label-2)" stroke-width="1.5"/><line x1="${sx}" x2="${sx}" y1="${sy-4}" y2="${sy}" stroke="var(--label-2)"/><line x1="${W-pad}" x2="${W-pad}" y1="${sy-4}" y2="${sy}" stroke="var(--label-2)"/><text x="${sx-6}" y="${sy+1}" font-size="11" text-anchor="end" fill="var(--label-2)">${sb} m</text>`);
+  const m=sh.measured.length;
+  g.push(`<text x="${pad}" y="${H-6}" font-size="11" fill="var(--label-2)">붐 ${f1(L)} m · ${Math.round(th*180/Math.PI)}° · 치수 ${m?`제원표 ${m}개 항목 반영`:'등급별 근사'}</text>`);
+  return `<svg class="fig" viewBox="0 0 ${W} ${H}" style="max-height:360px" role="img" aria-label="${esc(c.model)} 측면 형상">${g.join('')}</svg>`;
+}
+/* ----- SVG: 하중 곡선 ----- */
+function curveSVG(c, r, l){
+  const W=660, H=260, pl=46, pr=18, pt=16, pb=34;
+  const j=r.j; const S=state.settings;
+  const pts = c.radii_m.map((R,i)=>[R, c.capacity_t[i]?.[j]]).filter(p=>p[1]!=null);
+  if (pts.length<2) return '<p class="note">곡선을 그릴 데이터가 부족합니다.</p>';
+  const xMax = Math.max(pts[pts.length-1][0], +l.R||0)*1.04, xMin = 0;
+  const yMax = niceMax(Math.max(pts[0][1], r.W)*1.08);
+  const X = x => pl + (x-xMin)/(xMax-xMin)*(W-pl-pr);
+  const Y = y => pt + (1 - y/yMax)*(H-pt-pb);
+  const g=[];
+  const yt = ticks(yMax, 4);
+  yt.forEach(v=>{ g.push(`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--sep)"/><text x="${pl-8}" y="${Y(v)+4}" font-size="11" text-anchor="end" fill="var(--label-2)">${fmtT(v)}</text>`); });
+  ticks(xMax,6).forEach(v=>{ g.push(`<text x="${X(v)}" y="${H-pb+18}" font-size="11" text-anchor="middle" fill="var(--label-2)">${v}</text>`); });
+  g.push(`<text x="${W-pr}" y="${H-4}" font-size="11" text-anchor="end" fill="var(--label-2)">작업반경 (m)</text>`);
+  g.push(`<text x="${pl}" y="${pt-4}" font-size="11" fill="var(--label-2)">정격하중 (t)</text>`);
+  // step curve (conservative: 차트 값은 해당 반경까지 유지)
+  let d=''; pts.forEach((p,i)=>{ const x=X(i===0?p[0]:pts[i-1][0]), y=Y(p[1]); d += (i===0?`M${X(p[0])} ${y}`:` L${x} ${y}`) + ` L${X(p[0])} ${y}`; });
+  const area = d + ` L${X(pts[pts.length-1][0])} ${Y(0)} L${X(pts[0][0])} ${Y(0)} Z`;
+  g.push(`<path d="${area}" fill="var(--hl)" style="fill-opacity:.55"/>`);
+  g.push(`<path d="${d}" fill="none" stroke="var(--label)" stroke-width="2" stroke-linejoin="round"/>`);
+  // limit line
+  let dl=''; pts.forEach((p,i)=>{ const x=X(i===0?p[0]:pts[i-1][0]), y=Y(p[1]*S.limit); dl += (i===0?`M${X(p[0])} ${y}`:` L${x} ${y}`) + ` L${X(p[0])} ${y}`; });
+  g.push(`<path d="${dl}" fill="none" stroke="var(--label-2)" stroke-width="1" stroke-dasharray="4 4"/>`);
+  g.push(`<text x="${X(pts[pts.length-1][0])}" y="${Y(pts[pts.length-1][1]*S.limit)-6}" font-size="10" text-anchor="end" fill="var(--label-2)">사용한계 ${Math.round(S.limit*100)}%</text>`);
+  // lift point
+  const R=+l.R||0; const col = r.status==='ok'?'var(--ok-dot)':r.status==='caution'?'var(--warn-dot)':'var(--bad-dot)';
+  g.push(`<line x1="${X(R)}" x2="${X(R)}" y1="${Y(0)}" y2="${Y(r.W)}" stroke="${col}" stroke-dasharray="2 3"/>`);
+  g.push(`<circle cx="${X(R)}" cy="${Y(r.W)}" r="6" fill="${col}" stroke="var(--surface)" stroke-width="2"/>`);
+  const lx = X(R) > W*0.7 ? X(R)-10 : X(R)+10;
+  g.push(`<text x="${lx}" y="${Y(r.W)-10}" font-size="12" font-weight="600" text-anchor="${X(R)>W*0.7?'end':'start'}" fill="var(--label)">${f1(r.W)} t @ ${f1(R)} m · ${pct(r.U)}</text>`);
+  return `<svg class="fig" viewBox="0 0 ${W} ${H}" role="img" aria-label="하중 곡선">${g.join('')}</svg>`;
+}
+function niceMax(v){ const p=Math.pow(10,Math.floor(Math.log10(v))); const n=v/p; return (n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10)*p; }
+function ticks(max,n){ const step=niceMax(max/n); const out=[]; for(let v=0; v<=max+1e-9; v+=step) out.push(+v.toFixed(6)); return out; }
+function fmtT(v){ return v>=10? f0(v) : String(+v.toFixed(1)); }
+
+/* ----- 전체 요약 ----- */
+function projectSummary(){
+  const S=state.settings, pool=activeCranes();
+  const per = state.lifts.map(l=>({ l, ...recommend(l) }));
+  const governing = per.reduce((m,x)=> (x.pick && (!m || x.pick.c.maxCapacity_t > m.pick.c.maxCapacity_t)) ? x : m, null);
+  // 한 대로 전 작업: 모든 중량물에서 ok/caution (용량 작은 순)
+  const statusOf=(x,c)=>x.res.find(y=>y.c.id===c.id)?.r.status;
+  const single = pool.find(c => per.every(x => { const s=statusOf(x,c); return s==='ok'||s==='caution'; }));
+  const singleOk = pool.find(c => per.every(x => statusOf(x,c)==='ok'));
+  const unresolved = per.filter(x=>!x.pick);
+  return { per, governing, single, singleOk, unresolved, S };
+}
+function bestOfType(res, t){ const r=res.filter(x=>x.c.type===t); return r.find(x=>x.r.status==='ok') || r.find(x=>x.r.status==='caution') || null; }
+function renderSummary(){
+  const {per, governing, singleOk, single, unresolved, S} = projectSummary();
+  const heavy = state.lifts.reduce((m,l)=> (!m||l.w>m.w)?l:m, null);
+  const crit = per.filter(x=>x.pick && x.pick.r.status==='caution').length;
+  const types = TYPES.filter(t=>S.types[t]!==false && CRANES.some(c=>c.type===t));
+  const hero = `<div class="summary-hero">
+    <div class="card"><p class="kpi-k">단일 크레인으로 전 작업</p>
+      <p class="kpi-v">${singleOk?esc(singleOk.model):single?esc(single.model):'해당 없음'}</p>
+      <p class="kpi-s">${singleOk?`${esc(singleOk.manufacturer)} · ${f0(singleOk.maxCapacity_t)} t급 · 모든 작업 ${Math.round(S.limit*100)}% 이하`: single?`${f0(single.maxCapacity_t)} t급 · 일부 Critical Lift 필요`:'한 대로 모든 작업을 수행할 수 없습니다'}</p></div>
+    <div class="card"><p class="kpi-k">용량 결정 작업</p>
+      <p class="kpi-v">${governing?esc(governing.l.name):'–'}</p>
+      <p class="kpi-s">${governing?`${esc(governing.pick.c.model)} 필요 · ${f1(governing.l.w)} t @ R ${f1(governing.l.R)} m`:''}</p></div>
+    <div class="card"><p class="kpi-k">검토 현황</p>
+      <p class="kpi-v num">${per.length}건 <span style="font-size:15px;font-weight:500;color:var(--label-2)">중량물 · 크레인 ${activeCranes().length}종</span></p>
+      <p class="kpi-s">${unresolved.length?`<span style="color:var(--bad)">불가 ${unresolved.length}건</span> · `:''}${crit?`<span style="color:var(--warn)">Critical ${crit}건</span> · `:''}최대 중량 ${heavy?esc(heavy.name)+' '+f1(heavy.w)+' t':'–'}</p></div>
+  </div>`;
+  const cell = x => x ? `<span class="chip ${x.r.status}">${pct(x.r.U)}</span> <span style="font-weight:600">${esc(x.c.model)}</span><br><span style="color:var(--label-2);font-size:12px">${esc(x.c.manufacturer)} · ${f0(x.c.maxCapacity_t)} t · 붐 ${f1(x.r.L)} m</span>` : '<span style="color:var(--label-3)">해당 없음</span>';
+  const head = `<tr><th scope="col">중량물</th><th scope="col">조건</th><th scope="col">최소 적정</th>${types.map(t=>`<th scope="col">${typeName(t)}</th>`).join('')}</tr>`;
+  const rows = per.map(x=>`<tr><td><b style="font-weight:600">${esc(x.l.name)}</b></td>
+    <td class="num" style="color:var(--label-2)">${f1(x.l.w)} t · R ${f1(x.l.R)} · H ${f1(x.l.H)}</td>
+    <td>${x.pick?`<span class="pill ${x.pick.r.status}">${esc(x.pick.c.model)}</span>`:'<span class="pill none">없음</span>'}</td>
+    ${types.map(t=>`<td style="text-align:left">${cell(bestOfType(x.res,t))}</td>`).join('')}</tr>`).join('');
+  $('#view').innerHTML = `<div class="title-wrap"><p class="eyebrow">전체 요약</p><h1 class="title-input" style="margin:0">공사 중 필요 크레인</h1></div>
+    ${hero}
+    <p class="section-label" style="margin-top:28px">중량물별 형식별 최소 적정 크레인</p>
+    <div class="table-wrap"><table class="mx"><thead>${head}</thead><tbody>${rows}</tbody></table></div>
+    <p class="caption">각 칸은 해당 형식에서 조건을 만족하는 가장 작은 크레인과 정격하중 사용률. 초록 ≤ ${Math.round(S.critical*100)}% · 주황 ${Math.round(S.critical*100)}~${Math.round(S.limit*100)}% (Critical Lift).</p>`;
+}
+
+/* ----- 크레인 DB ----- */
+function dbList(){
+  const q=(state.dbQuery||'').trim().toLowerCase();
+  return CRANES.filter(c=>(state.dbType==='all'||c.type===state.dbType) && (!q || `${c.manufacturer} ${c.model}`.toLowerCase().includes(q)));
+}
+function dbItemsHTML(list, cur){
+  return list.length ? list.map(x=>`<button class="row list-btn" data-db="${x.id}" aria-current="${x.id===cur}" type="button">
+      <span class="lbl"><span>${esc(x.model)}</span><span class="sub">${esc(x.manufacturer)} · ${typeName(x.type)} · ${f0(x.maxCapacity_t)} t</span></span>
+      <svg class="chev" width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5l5 5-5 5"/></svg></button>`).join('')
+    : '<div class="empty">검색 결과가 없습니다</div>';
+}
+function renderDB(){
+  const list=dbList();
+  const c = CRANES.find(x=>x.id===state.dbSel) || list[0] || CRANES[0];
+  const types = TYPES.filter(t=>CRANES.some(x=>x.type===t));
+  const sh=shape(c);
+  const kv = [
+    ['최대 정격하중', `${f0(c.maxCapacity_t)} t`],['형식', typeName(c.type)+(c.axles?` · ${c.axles}축`:'')],['최대 붐 길이', c.maxBoom_m?`${f1(c.maxBoom_m)} m`:'–'],
+    ['카운터웨이트', c.counterweight_t!=null?`${f1(c.counterweight_t)} t`:'–'],
+    sh.crawler?['트랙 길이', `${f1(sh.trackL)} m${sh.measured.includes('trackLength_m')?'':' (근사)'}`]:['아웃트리거', c.outriggerSpan_m?c.outriggerSpan_m.map(f1).join(' × ')+' m':'–'],
+    ['자중(운용)', c.operatingWeight_t?`${f1(c.operatingWeight_t)} t`:'–'],
+    ['최대 인양 높이', c.maxHookHeight_m?`${f1(c.maxHookHeight_m)} m`:'–'],['훅블록(추정 가산)', `${f1(hookEst(c,state.settings))} t`],
+    ['붐 풋핀', `높이 ${f1(sh.h0)} · 거리 ${f1(sh.a)} m${sh.measured.includes('boomPivotHeight_m')?'':' (근사)'}`]
+  ].map(([k,v])=>`<div><p class="k">${k}</p><p class="v num">${esc(v)}</p></div>`).join('');
+  const cols = c.boomLengths_m, max = Math.max(...c.capacity_t.flat().filter(v=>v!=null));
+  const table = `<table class="lc"><thead><tr><th scope="col" style="text-align:left;position:sticky;left:0;z-index:2">R \\ 붐</th>${cols.map(L=>`<th scope="col">${f1(L)}</th>`).join('')}</tr></thead><tbody>
+    ${c.radii_m.map((R,i)=>`<tr><th scope="row">${f1(R)}</th>${cols.map((_,j)=>{ const v=c.capacity_t[i]?.[j]; return v==null?'<td class="e">·</td>':`<td style="background:rgba(var(--heat-rgb),calc(var(--heat-base) + var(--heat-span) * ${Math.sqrt(v/max).toFixed(3)}))">${v>=100?f0(v):f1(v)}</td>`; }).join('')}</tr>`).join('')}
+  </tbody></table>`;
+  const src = c.source||{};
+  $('#view').innerHTML = `<div class="split">
+    <aside class="sidebar"><div class="side-head"><h2>크레인</h2><span class="caption" style="padding:0" id="dbCount">${list.length} / ${CRANES.length}종</span></div>
+      <div class="group" style="margin-bottom:10px"><label class="row" for="dbq"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--label-2)" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="dbq" type="search" placeholder="제조사·모델 검색" value="${esc(state.dbQuery||'')}" style="border:0;background:transparent;flex:1;min-width:0;outline:none" autocomplete="off"></label></div>
+      <div class="seg" role="group" aria-label="형식" style="display:flex;margin:0 0 10px;flex-wrap:wrap"><button type="button" data-dbt="all" aria-selected="${state.dbType==='all'}">전체</button>${types.map(t=>`<button type="button" data-dbt="${t}" aria-selected="${state.dbType===t}">${({AT:'올터레인',RT:'러프',TC:'트럭',CR:'크롤러',TCR:'텔레 크롤러'})[t]}</button>`).join('')}</div>
+      <div class="group" id="dbItems" style="max-height:62vh;overflow:auto">${dbItemsHTML(list,c.id)}</div>
+      <p class="caption">제조사 공개 제원표의 주 붐·최대 카운터웨이트·아웃트리거 최대 전개(크롤러는 표준 카운터웨이트)·360° 표입니다.</p></aside>
+    <section>
+      <div class="title-wrap"><p class="eyebrow">${esc(c.manufacturer)} · ${typeName(c.type)}</p><h1 class="title-input" style="margin:0">${esc(c.model)}</h1></div>
+      <div class="stack">
+        <div class="card"><div class="chart-head"><h4>측면 형상</h4><span>제원표 치수 기반 · 실제 비례</span></div>${profileSVG(c)}</div>
+        <div class="kv">${kv}</div>
+        <div><p class="section-label">정격 총하중표 (t) — ${esc(c.chartConfig||'')}</p><div class="lc-wrap">${table}</div>
+          <p class="caption">행: 작업반경(m), 열: 붐 길이(m). 빈 칸은 해당 조합 사용 불가.</p></div>
+        <div class="card"><p class="kpi-k" style="margin:0">자료 출처</p>
+          <p style="margin:6px 0 0;overflow-wrap:anywhere">${src.url?`<a href="${esc(src.url)}" target="_blank" rel="noopener">${esc(src.title||src.url)}</a>`:'–'}${src.page?` · p.${esc(src.page)}`:''}</p>
+          <p class="note">수집일 ${esc(src.retrieved||'–')}${c.notes?` · ${esc(c.notes)}`:''}</p></div>
+      </div>
+    </section></div>`;
+  const bindItems=()=>document.querySelectorAll('[data-db]').forEach(b=>b.onclick=()=>{ state.dbSel=b.dataset.db; save(); renderDB(); });
+  bindItems();
+  document.querySelectorAll('[data-dbt]').forEach(b=>b.onclick=()=>{ state.dbType=b.dataset.dbt; const l=dbList(); if(l.length && !l.some(x=>x.id===state.dbSel)) state.dbSel=l[0].id; renderDB(); });
+  const q=$('#dbq'); q.addEventListener('input',()=>{ state.dbQuery=q.value; const l=dbList(); $('#dbItems').innerHTML=dbItemsHTML(l,c.id); $('#dbCount').textContent=`${l.length} / ${CRANES.length}종`; bindItems(); });
+}
+function typeName(t){ return ({AT:'올터레인',RT:'러프터레인',TC:'트럭 크레인',CR:'크롤러(격자붐)',TCR:'텔레스코픽 크롤러'})[t]||t||''; }
+
+/* ----- 기준·방법 ----- */
+function renderMethod(){
+  const S=state.settings;
+  const sel = (id,label,sub,val,opts) => `<label class="row" for="${id}"><span class="lbl">${label}${sub?`<span class="sub">${sub}</span>`:''}</span>
+     <select class="inline" id="${id}" data-s="${id.replace('s-','')}">${opts.map(o=>`<option value="${o[0]}" ${+o[0]===+val?'selected':''}>${o[1]}</option>`).join('')}</select></label>`;
+  const num = (id,label,sub,val,unit) => `<label class="row" for="${id}"><span class="lbl">${label}${sub?`<span class="sub">${sub}</span>`:''}</span>
+     <span class="field"><input id="${id}" data-s="${id.replace('s-','')}" type="number" inputmode="decimal" step="0.1" min="0" value="${val}"><span class="unit">${unit}</span></span></label>`;
+  $('#view').innerHTML = `<div class="title-wrap"><p class="eyebrow">기준·방법</p><h1 class="title-input" style="margin:0">검토 기준과 계산 방법</h1></div>
+  <div class="method-grid">
+    <div>
+      <p class="section-label">판정 기준</p>
+      <div class="group">
+        ${sel('s-limit','정격하중 사용한계','초과 시 용량 초과',S.limit,[[0.7,'70%'],[0.75,'75%'],[0.8,'80%'],[0.85,'85%'],[0.9,'90%']])}
+        ${sel('s-critical','Critical Lift 기준','초과 시 주의 표시',S.critical,[[0.7,'70%'],[0.75,'75%'],[0.8,'80%']])}
+      </div>
+      <p class="section-label">검토에 쓸 크레인 형식</p>
+      <div class="group">
+        ${TYPES.filter(t=>CRANES.some(c=>c.type===t)).map(t=>`<label class="row" for="ty-${t}"><span class="lbl">${typeName(t)}<span class="sub">${CRANES.filter(c=>c.type===t).length}종</span></span>
+          <span class="switch"><input type="checkbox" id="ty-${t}" data-ty="${t}" ${S.types[t]!==false?'checked':''}><span></span></span></label>`).join('')}
+      </div>
+      <p class="caption">현장 여건상 쓸 수 없는 형식(예: 크롤러 조립 공간 부족)은 끄세요.</p>
+      <p class="section-label">형상 가정</p>
+      <div class="group">
+        ${num('s-slingH','줄걸이 높이','훅 ~ 인양물 상단',S.slingH,'m')}
+        ${num('s-headClear','붐 헤드 여유','붐 끝 ~ 훅 (훅블록 포함)',S.headClear,'m')}
+        ${num('s-obsClear','장애물 이격','붐 단면 반폭 포함',S.obsClear,'m')}
+        ${num('s-hookPct','훅블록 중량 추정','최대 정격하중 대비',S.hookPct,'%')}
+      </div>
+      <div class="group" style="margin-top:22px"><button class="btn-plain" style="width:100%;min-height:44px" id="resetSample" type="button">예시 프로젝트로 되돌리기</button></div>
+      <p class="caption">기준값은 이 브라우저에만 저장됩니다.</p>
+    </div>
+    <div class="card prose">
+      <p style="margin-top:0">리깅플랜은 <b>공사 기획 단계</b>에서 중량물 설치에 필요한 크레인 용량을 결정하기 위한 검토 도구입니다. 결과는 개략 검토용이며, 실제 작업 전에는 선정된 크레인의 제조사 정격하중표와 현장 조건으로 작업계획서(산업안전보건기준에 관한 규칙 제38조)를 별도로 작성해야 합니다.</p>
+      <h3>1. 총 인양하중</h3>
+      <span class="formula">W = 인양물 + 줄걸이·부속 + 훅블록
+훅블록 = 최대 정격하중 × ${f1(S.hookPct)}% (추정, 최소 0.2 t)</span>
+      <h3>2. 정격하중과 사용률</h3>
+      <p>제조사 정격 총하중표에서 <b>입력 반경 이상인 가장 가까운 반경 행</b>을 보수적으로 적용합니다(보간 없음). 사용 가능한 붐 길이 열 가운데 높이·장애물 조건을 만족하면서 정격하중이 가장 큰 조합을 택합니다.</p>
+      <span class="formula">U = W / 정격하중
+U ≤ ${Math.round(S.critical*100)}% 적합 · ≤ ${Math.round(S.limit*100)}% 주의(Critical Lift) · 초과 시 불가</span>
+      <h3>3. 붐 형상</h3>
+      <span class="formula">cos θ = (R − a) / L
+붐 헤드 높이 = h₀ + L · sin θ ≥ 설치 높이 + 인양물 높이 + 줄걸이 높이 + 헤드 여유
+붐 높이(장애물 위치 d) = h₀ + (d − a) · tan θ ≥ 장애물 높이 + 이격</span>
+      <p>h₀(붐 풋핀 높이)와 a(선회중심 ~ 풋핀 수평거리, 붐 쪽 +)는 제조사 치수도에 있으면 그 값을, 없으면 형식별 근사값을 씁니다. 텔레스코픽 크레인은 풋핀이 선회중심 <b>뒤쪽</b>(카운터웨이트 쪽)에 있어 a가 음수이고(근사 a = −(2.2 + 0.003·C), h₀ = 2.9 + 0.0025·C), 격자붐 크롤러는 앞쪽에 있습니다(a = 0.9 + 0.0015·C). C는 최대 정격(t)입니다. 붐 처짐, 지브·러핑 지브 구성은 반영하지 않습니다.</p>
+      <h3>4. 크레인 형상 그림</h3>
+      <p>단면도와 측면 형상은 제원표 치수도의 전장, 차축 위치, 타이어 지름, 선회중심 위치, 트랙 길이·높이, 선회 후방반경, 붐 풋핀 위치, 아웃트리거 간격을 실제 축척으로 반영해 그립니다. 치수가 없는 항목은 등급별 근사값을 쓰며, 크레인 DB의 측면 형상 아래에 반영된 항목 수를 표시합니다. 색은 제조사 표준 도색 기준입니다.</p>
+      <h3>5. 반영하지 않은 항목</h3>
+      <ul>
+        <li>지반지지력과 아웃트리거 반력 — 크레인 선정 후 제조사 반력 자료로 별도 검토</li>
+        <li>풍하중, 동하중 계수, 인양물 회전(Tailing) 및 2대 합동 인양</li>
+        <li>아웃트리거 부분 전개·축소 카운터웨이트 등 다른 구성의 차트</li>
+      </ul>
+      <h3>6. 참고 기준</h3>
+      <ul>
+        <li>산업안전보건기준에 관한 규칙 제38조(작업계획서), 제385조(중량물 취급)</li>
+        <li>KOSHA GUIDE C-102-2023 — 중량물 취급 작업계획서(이동식 크레인) 작성 지침</li>
+        <li>ASME B30.5 — 정격하중 75% 초과 시 Critical Lift로 관리하는 관행</li>
+      </ul>
+    </div>
+  </div>`;
+  document.querySelectorAll('[data-ty]').forEach(el=>el.addEventListener('change',()=>{ state.settings.types={...state.settings.types,[el.dataset.ty]:el.checked}; save(); toast(`${typeName(el.dataset.ty)} ${el.checked?'포함':'제외'}`); }));
+  document.querySelectorAll('[data-s]').forEach(el=>{
+    const h=()=>{ const v=parseFloat(el.value); if(isFinite(v)){ state.settings[el.dataset.s]=v; save(); } };
+    el.addEventListener('input',h); el.addEventListener('change',()=>{ h(); if(el.tagName==='SELECT') renderMethod(); });
+  });
+  const rs=$('#resetSample'); rs.onclick=()=>{
+    if (rs.dataset.armed!=='1'){ rs.dataset.armed='1'; rs.textContent='입력한 중량물이 모두 바뀝니다. 한 번 더 누르세요'; setTimeout(()=>{ if(rs.isConnected){ rs.dataset.armed=''; rs.textContent='예시 프로젝트로 되돌리기'; } },3000); return; }
+    state.lifts=JSON.parse(JSON.stringify(SAMPLE)); state.settings={...DEFAULT_SETTINGS}; state.sel='l1'; state.sample=true; save(); renderMethod(); toast('예시 프로젝트로 되돌렸습니다');
+  };
+}
+
+/* ----- 요약 복사 ----- */
+function summaryText(){
+  const {per, singleOk, single, S} = projectSummary();
+  const lines = ['[리깅플랜] 크레인 용량 검토 요약', `기준: 사용한계 ${Math.round(S.limit*100)}%, Critical ${Math.round(S.critical*100)}%`, ''];
+  per.forEach((x,i)=>{
+    const p=x.pick;
+    lines.push(`${i+1}. ${x.l.name} — ${f1(x.l.w)} t, R ${f1(x.l.R)} m, 설치 H ${f1(x.l.H)} m`);
+    lines.push(p ? `   → ${p.c.model} (${f0(p.c.maxCapacity_t)} t급), 붐 ${f1(p.r.L)} m / ${f1(p.r.deg)}°, 총하중 ${f1(p.r.W)} t / 정격 ${f1(p.r.cap)} t = ${pct(p.r.U)} ${p.r.status==='caution'?'(Critical Lift)':''}` : '   → 등록 크레인으로 불가');
+  });
+  lines.push('', `단일 크레인: ${singleOk?singleOk.model:single?single.model+' (일부 Critical)':'해당 없음'}`, '※ 기획 단계 개략 검토 결과이며, 작업 전 제조사 정격하중표로 재확인 필요');
+  return lines.join('\n');
+}
+$('#copyBtn').onclick = async ()=>{
+  const txt = summaryText();
+  try { await navigator.clipboard.writeText(txt); toast('요약을 복사했습니다'); }
+  catch(e){ const ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); let ok=false; try{ ok=document.execCommand('copy'); }catch(_){} ta.remove(); toast(ok?'요약을 복사했습니다':'복사할 수 없습니다. 전체 요약 화면을 이용하세요'); }
+};
+/* ----- 화면 모드 ----- */
+const HOST_THEME = document.documentElement.getAttribute('data-theme'); // 뷰어가 지정한 테마 (자동일 때 복원)
+let theme = 'auto'; try { theme = localStorage.getItem('rigging-theme') || 'auto'; } catch(e){}
+function applyTheme(t){
+  theme = t; const root = document.documentElement;
+  if (t==='light'||t==='dark') root.setAttribute('data-theme', t);
+  else if (HOST_THEME) root.setAttribute('data-theme', HOST_THEME); else root.removeAttribute('data-theme');
+  document.querySelectorAll('[data-theme-set]').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.themeSet===t)));
+  try { localStorage.setItem('rigging-theme', t); } catch(e){}
+}
+document.querySelectorAll('[data-theme-set]').forEach(b=>b.onclick=()=>{ applyTheme(b.dataset.themeSet); toast(({light:'라이트 모드',dark:'다크 모드',auto:'시스템 설정을 따릅니다'})[b.dataset.themeSet]); });
+applyTheme(theme);
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>setView(b.dataset.view));
+setView(state.view);
+</script>

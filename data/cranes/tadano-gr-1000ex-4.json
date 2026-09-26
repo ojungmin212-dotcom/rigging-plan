@@ -1,0 +1,371 @@
+{
+  "id": "tadano-gr-1000ex-4",
+  "manufacturer": "Tadano",
+  "model": "GR-1000EX-4",
+  "type": "RT",
+  "boomType": "telescopic",
+  "maxCapacity_t": 100.0,
+  "axles": 2,
+  "operatingWeight_t": null,
+  "maxBoom_m": 51.0,
+  "maxHookHeight_m": null,
+  "counterweight_t": 11.2,
+  "outriggerSpan_m": [
+    7.33,
+    7.3
+  ],
+  "maxOutriggerForce_t": null,
+  "groundPressure_kPa": null,
+  "dims": {
+    "overallLength_m": 8.58,
+    "overallWidth_m": 3.315,
+    "transportHeight_m": 3.805,
+    "axlePositions_m": [
+      2.225,
+      6.175
+    ],
+    "wheelDiameter_m": null,
+    "tyreSize": "29.5-25 36PR (OR)",
+    "slewCentreFromFront_m": 4.3,
+    "trackLength_m": null,
+    "trackHeight_m": null,
+    "trackGauge_m": null,
+    "tailSwingRadius_m": 4.79,
+    "boomPivotHeight_m": null,
+    "boomPivotOffset_m": -2.2,
+    "telescopicSections": 5,
+    "dimsPage": "1"
+  },
+  "chartConfig": "Main boom, counterweight 11.2 t in SMART CW2 position (mounted at rear), outriggers fully extended 7.3 m spread, 360° rotation, telescoping mode 1 (mode 2 for 46.2 m)",
+  "chartIncludesHookBlock": true,
+  "boomLengths_m": [
+    12.8,
+    17.6,
+    22.4,
+    31.9,
+    41.5,
+    46.2,
+    51.0
+  ],
+  "radii_m": [
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    14.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0,
+    30.0,
+    32.0,
+    34.0,
+    36.0,
+    38.0,
+    40.0,
+    42.0
+  ],
+  "capacity_t": [
+    [
+      null,
+      45.1,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      45.1,
+      33.9,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      75.4,
+      45.1,
+      33.9,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      68.2,
+      45.1,
+      33.9,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      62.0,
+      45.1,
+      33.9,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      56.7,
+      45.1,
+      33.9,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      52.1,
+      45.1,
+      33.9,
+      15.3,
+      null,
+      null,
+      null
+    ],
+    [
+      48.0,
+      45.1,
+      33.9,
+      15.3,
+      null,
+      null,
+      null
+    ],
+    [
+      43.8,
+      43.5,
+      32.0,
+      15.3,
+      null,
+      null,
+      null
+    ],
+    [
+      40.1,
+      39.8,
+      30.2,
+      15.3,
+      null,
+      null,
+      null
+    ],
+    [
+      37.0,
+      36.7,
+      28.6,
+      15.3,
+      12.8,
+      null,
+      null
+    ],
+    [
+      34.3,
+      33.3,
+      27.1,
+      15.3,
+      12.8,
+      null,
+      null
+    ],
+    [
+      29.2,
+      27.7,
+      24.5,
+      15.3,
+      12.8,
+      10.9,
+      null
+    ],
+    [
+      23.8,
+      23.3,
+      21.3,
+      15.3,
+      12.8,
+      10.9,
+      null
+    ],
+    [
+      null,
+      19.3,
+      18.3,
+      15.3,
+      12.8,
+      10.5,
+      9.4
+    ],
+    [
+      null,
+      16.3,
+      15.9,
+      14.3,
+      12.5,
+      10.0,
+      9.4
+    ],
+    [
+      null,
+      12.0,
+      11.6,
+      12.2,
+      10.6,
+      9.1,
+      9.0
+    ],
+    [
+      null,
+      null,
+      8.7,
+      10.1,
+      9.2,
+      8.3,
+      8.3
+    ],
+    [
+      null,
+      null,
+      6.6,
+      8.0,
+      8.0,
+      7.4,
+      7.3
+    ],
+    [
+      null,
+      null,
+      5.1,
+      6.4,
+      7.0,
+      6.7,
+      6.4
+    ],
+    [
+      null,
+      null,
+      null,
+      5.1,
+      5.7,
+      6.2,
+      5.6
+    ],
+    [
+      null,
+      null,
+      null,
+      4.1,
+      4.7,
+      5.4,
+      4.9
+    ],
+    [
+      null,
+      null,
+      null,
+      3.3,
+      3.9,
+      4.6,
+      4.2
+    ],
+    [
+      null,
+      null,
+      null,
+      2.6,
+      3.2,
+      3.9,
+      3.5
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      2.6,
+      3.3,
+      2.9
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      2.1,
+      2.8,
+      2.4
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.6,
+      2.3,
+      1.9
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.3,
+      1.9,
+      1.5
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      0.9,
+      1.6,
+      1.2
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.3,
+      0.9
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.1,
+      null
+    ]
+  ],
+  "source": {
+    "url": "https://mediahub.tadano.com/m/a63e684344808e3/original/doc_tadano_GR-1000EX-4-00101_datasheet_metric_GEN_en.pdf",
+    "title": "Tadano GR-1000EX-4 spec sheet GR-1000E-4-00101/EX-04 (metric, official Tadano mediahub; linked from tadano.com/south-korea RT page)",
+    "page": "12 (rated lifting capacities, CW 11.2 t SMART CW2, outriggers fully extended 7.3 m, 360°); 1 (dimensions)",
+    "retrieved": "2026-09-24"
+  },
+  "notes": "Headline 100 t is over-front only (12.8 m @2.5 m) - excluded. 12.8 m 360° column used: 90.0 t @2.5 m and 84.10 t @3.0 m are marked ★ \"with attachment sheaves\". SMART CW1 = counterweight mounted at front (tail swing 4,190, slightly lower capacities, p.11); SMART CW2 = mounted at rear (tail swing 4,790, used here). \"SMART CHART\" pages (p.13) are not 360° and not used. Source chart has 10 columns because 22.4/31.9/41.5 m booms have telescoping modes 1 and 2; this file uses mode 1 for 22.4, 31.9, 41.5 m (12.8/17.6/51.0 are 1,2 or 1) and mode 2 for 46.2 m (only mode). Mode 2 gives higher values at long radii (e.g. 22.4 m @20 m: mode 1 5.10 t, mode 2 7.50 t) - consult source. Capacities are rated lifting capacities; hook block mass (750 kg 100 t, 500 kg 50 t, 450 kg 35 t, 165 kg 6.6 t hook per equipment list) and slings must be deducted (operation note 3). Outrigger longitudinal span = 3,550 + 3,780 mm (outrigger centres to slewing centre, p.1); transverse max 7.3 m (mid 6.7/5.5 m, min 2.7 m). Operating weight and max hook height not stated numerically. DIMS (p.1): overall 15,185 = 8,830 (boom head to front axle) + 3,950 wheelbase + 2,405; carrier length 8,580 -> front axle 2.225 m, rear axle 6.175 m from carrier front; slewing centre 1,875 mm ahead of rear axle (4.30 m); boom foot pin 2,200 mm behind slewing centre; an additional 475 mm dimension is drawn beyond the rear end (not interpreted). Tail swing 4,790 (CW2). Wheel diameter not printed (bias tyre 29.5-25), null. | 2026-09-24: special-equipment ratings [90.0, 84.1] set to null (conservative)."
+}

@@ -1,0 +1,372 @@
+{
+  "id": "liebherr-ltm1040-2.1",
+  "manufacturer": "Liebherr",
+  "model": "LTM 1040-2.1",
+  "type": "AT",
+  "boomType": "telescopic",
+  "maxCapacity_t": 40,
+  "axles": 2,
+  "operatingWeight_t": null,
+  "maxBoom_m": 35,
+  "maxHookHeight_m": null,
+  "counterweight_t": 6.5,
+  "outriggerSpan_m": [
+    6.305,
+    6.028
+  ],
+  "maxOutriggerForce_t": 32,
+  "groundPressure_kPa": null,
+  "dims": {
+    "overallLength_m": 8.534,
+    "boomOverhangFront_m": 2.071,
+    "overallWidth_m": 2.55,
+    "transportHeight_m": 3.55,
+    "axlePositions_m": [
+      2.886,
+      6.466
+    ],
+    "wheelDiameter_m": 1.37,
+    "tyreSize": "385/95 R 25 (14.00 R 25)",
+    "slewCentreFromFront_m": 5.536,
+    "trackLength_m": null,
+    "trackHeight_m": null,
+    "trackGauge_m": null,
+    "tailSwingRadius_m": 3.33,
+    "boomPivotHeight_m": null,
+    "boomPivotOffset_m": null,
+    "telescopicSections": 4,
+    "dimsPage": "3"
+  },
+  "chartConfig": "Telescopic boom 10.5-35 m, 6.5 t counterweight (max), outriggers extended (6.305 x 6.028 m per dimension drawing), 360°, standard (non-telescoping) capacities",
+  "chartIncludesHookBlock": true,
+  "boomLengths_m": [
+    10.5,
+    15.4,
+    20.3,
+    25.2,
+    30.1,
+    32.6,
+    35.0
+  ],
+  "radii_m": [
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    6.0,
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    17.0,
+    18.0,
+    19.0,
+    20.0,
+    21.0,
+    22.0,
+    23.0,
+    24.0,
+    25.0,
+    26.0,
+    27.0,
+    28.0,
+    29.0,
+    30.0,
+    31.0
+  ],
+  "capacity_t": [
+    [
+      30.6,
+      19.7,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      28.2,
+      20.2,
+      17.5,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      25.6,
+      20.6,
+      18.0,
+      15.1,
+      null,
+      null,
+      null
+    ],
+    [
+      23.5,
+      21.2,
+      18.3,
+      14.8,
+      10.7,
+      null,
+      null
+    ],
+    [
+      21.6,
+      21.3,
+      18.8,
+      14.3,
+      10.6,
+      9.0,
+      null
+    ],
+    [
+      18.5,
+      18.8,
+      18.7,
+      13.3,
+      10.2,
+      8.8,
+      7.4
+    ],
+    [
+      15.4,
+      15.7,
+      15.3,
+      12.4,
+      9.6,
+      8.5,
+      7.2
+    ],
+    [
+      null,
+      13.0,
+      12.8,
+      11.5,
+      8.9,
+      8.1,
+      6.9
+    ],
+    [
+      null,
+      10.7,
+      10.8,
+      10.4,
+      8.4,
+      7.7,
+      6.6
+    ],
+    [
+      null,
+      9.0,
+      9.1,
+      9.1,
+      7.9,
+      7.3,
+      6.3
+    ],
+    [
+      null,
+      7.7,
+      7.8,
+      7.9,
+      7.4,
+      6.9,
+      6.1
+    ],
+    [
+      null,
+      6.7,
+      6.8,
+      6.9,
+      6.9,
+      6.5,
+      5.8
+    ],
+    [
+      null,
+      null,
+      6.0,
+      6.1,
+      6.1,
+      6.1,
+      5.6
+    ],
+    [
+      null,
+      null,
+      5.3,
+      5.4,
+      5.4,
+      5.5,
+      5.4
+    ],
+    [
+      null,
+      null,
+      4.7,
+      4.8,
+      4.9,
+      4.9,
+      4.9
+    ],
+    [
+      null,
+      null,
+      4.3,
+      4.3,
+      4.4,
+      4.4,
+      4.4
+    ],
+    [
+      null,
+      null,
+      3.8,
+      3.9,
+      3.9,
+      4.0,
+      4.0
+    ],
+    [
+      null,
+      null,
+      null,
+      3.5,
+      3.6,
+      3.6,
+      3.6
+    ],
+    [
+      null,
+      null,
+      null,
+      3.2,
+      3.3,
+      3.3,
+      3.3
+    ],
+    [
+      null,
+      null,
+      null,
+      2.9,
+      3.0,
+      3.0,
+      3.0
+    ],
+    [
+      null,
+      null,
+      null,
+      2.7,
+      2.7,
+      2.7,
+      2.8
+    ],
+    [
+      null,
+      null,
+      null,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      2.3,
+      2.3,
+      2.3
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      2.1,
+      2.1,
+      2.1
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.9,
+      1.9,
+      1.9
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.7,
+      1.7,
+      1.8
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.5,
+      1.6,
+      1.6
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.4,
+      1.5
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.3,
+      1.3
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.2
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.1
+    ]
+  ],
+  "source": {
+    "url": "https://assets-cdn.liebherr.com/versions/bb9a2b2c-31d2-4ce5-bcfb-a97c937ca59b/original/",
+    "title": "Liebherr Technical data - Mobile crane LTM 1040-2.1 [m/t] (liebherr-196-ltm-1040-2-1-td-196-02-defisr03-2023, linked from liebherr.com product page)",
+    "page": "9 (load chart t_196_00226_00_000); dimensions p.3",
+    "retrieved": "2026-09-24"
+  },
+  "notes": "Values from the official Liebherr metric datasheet (p.9: 360°, 6.5 t). 10.5 m boom has an over-rear '*' sub-column (40 t at 2.5 m = headline rating; 35.4 t at 3 m) which is NOT stored, and the 2.5 m radius row exists only in that column (so dropped); other boom lengths have a '**' telescopable-load sub-column, also not stored. Outrigger span not printed on the table (icon only); full span from the dimension drawing (VarioBase transverse 2.328-6.028 m). Max supporting force 310 kN (32 t), p.7. Operating weight not stated: on-road ≤ 24 t (2 x 12 t) with 1.5 t counterweight. maxHookHeight not taken (graph only, p.8). Overall length incl. superstructure overhang 10.930 m; tail radius R = 3330 mm (top view). Dims from the side/top dimension drawing: overallLength_m = carrier length (bottom dimension chain, carrier front to rear); axle positions and slew centre are cumulative sums of that chain, measured from the carrier front. Height/width = columns A/B-or-C of the dimension table for the standard 385/95 R 25 (14.00 R 25) tyres. wheelDiameter_m is NOT from the drawing: nominal value computed from the tyre designation (25 in rim + 2 x 95% x 385 mm = 1.37 m). Boom pivot height/offset are not dimensioned on the drawing (null). Liebherr remarks: hook block weight is part of the load (chartIncludesHookBlock true). Dimension reference corrected: the datasheet's bottom dimension chain starts at the front of the boom head (transport position, boom overhanging the cab), not at the carrier front bumper. overallLength_m is now the carrier length (front bumper to rear) and axlePositions_m / slewCentreFromFront_m are measured from the carrier front bumper; the boom head overhang ahead of the bumper is stored as boomOverhangFront_m = 2.071 m (overall transport length incl. boom = 10.605 m). Evidence (dimensions drawing p.3): bottom chain 2071 | 2886 | 3580 | 2068 = 10605 with separate 8534 carrier dimension; slew centre 2650 behind 1st axle."
+}

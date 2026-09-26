@@ -1,0 +1,265 @@
+{
+  "id": "grove-ghc75",
+  "manufacturer": "Manitowoc Grove",
+  "model": "GHC75",
+  "type": "TCR",
+  "boomType": "telescopic",
+  "maxCapacity_t": 70,
+  "axles": null,
+  "operatingWeight_t": 71.76,
+  "maxBoom_m": 36,
+  "maxHookHeight_m": null,
+  "counterweight_t": 17.4,
+  "outriggerSpan_m": null,
+  "maxOutriggerForce_t": null,
+  "groundPressure_kPa": null,
+  "dims": {
+    "overallLength_m": 12.96,
+    "overallWidth_m": 3.2,
+    "transportHeight_m": 3.195,
+    "axlePositions_m": null,
+    "wheelDiameter_m": null,
+    "tyreSize": null,
+    "slewCentreFromFront_m": null,
+    "trackLength_m": 6.07,
+    "trackHeight_m": 0.981,
+    "trackGauge_m": 4.1,
+    "tailSwingRadius_m": null,
+    "boomPivotHeight_m": null,
+    "boomPivotOffset_m": null,
+    "telescopicSections": 4,
+    "dimsPage": "5"
+  },
+  "chartConfig": "Main boom 11.0–36.0 m, 17.4 t counterweight + 8 t carbody counterweight, tracks 100% extended, 360°, metric 75% rating (ASME B30.5)",
+  "chartIncludesHookBlock": true,
+  "boomLengths_m": [
+    11.0,
+    13.8,
+    16.6,
+    19.3,
+    24.8,
+    30.3,
+    36.0
+  ],
+  "radii_m": [
+    2.0,
+    2.5,
+    3.0,
+    4.0,
+    5.0,
+    6.0,
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    12.0,
+    14.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0,
+    30.0,
+    32.0
+  ],
+  "capacity_t": [
+    [
+      70.0,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      69.5,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      67.2,
+      61.0,
+      44.0,
+      37.8,
+      22.5,
+      null,
+      null
+    ],
+    [
+      56.0,
+      53.6,
+      37.7,
+      32.6,
+      22.5,
+      21.0,
+      null
+    ],
+    [
+      44.9,
+      44.5,
+      32.9,
+      28.5,
+      22.5,
+      20.1,
+      14.5
+    ],
+    [
+      37.3,
+      36.9,
+      29.1,
+      25.1,
+      22.1,
+      18.4,
+      14.5
+    ],
+    [
+      31.4,
+      30.8,
+      26.1,
+      22.5,
+      19.8,
+      16.9,
+      14.2
+    ],
+    [
+      25.5,
+      25.0,
+      23.6,
+      20.3,
+      17.9,
+      15.4,
+      13.4
+    ],
+    [
+      null,
+      20.8,
+      20.5,
+      18.4,
+      16.4,
+      14.1,
+      12.6
+    ],
+    [
+      null,
+      17.6,
+      17.4,
+      16.8,
+      15.0,
+      12.9,
+      11.8
+    ],
+    [
+      null,
+      null,
+      13.1,
+      13.0,
+      12.8,
+      11.0,
+      10.2
+    ],
+    [
+      null,
+      null,
+      null,
+      10.2,
+      10.7,
+      9.5,
+      8.7
+    ],
+    [
+      null,
+      null,
+      null,
+      8.1,
+      8.6,
+      8.3,
+      7.5
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      7.1,
+      7.3,
+      6.5
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      5.9,
+      6.2,
+      5.8
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      5.2,
+      5.2
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      4.4,
+      4.7
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      3.7,
+      4.0
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      3.4
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      2.8
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      2.4
+    ]
+  ],
+  "source": {
+    "url": "https://www.wppecrane.com/wp-content/uploads/2021/04/GHC75-Product-Guide-Metric-and-Imperial-04-2015.pdf",
+    "title": "Grove GHC75 Preliminary Product Guide, metric & imperial (04-2015), dealer-hosted",
+    "page": "10 (chart), 5 (dims)",
+    "retrieved": "2026-09-24"
+  },
+  "notes": "PRELIMINARY product guide (2015) hosted by dealer WPPE, not the manufacturer site; chart states it is only a guide. Chart printed in kg, converted to t (/1000). 4 m row 13.8 m cell printed as \"53  600\" (split token) = 53.6 t, verified visually. Rated loads assume 8 m boom extension removed; if stowed, reduce by 770/610/510/430/340/280/240 kg for 11.0…36.0 m booms. All load handling devices are part of the load. Operating weight 71.76 t with 8 m extension, 17.44 t counterweight + 8 t carbody. Ground bearing pressure (no load) 0.77 kg/cm² stated (≈75.5 kPa) but not entered because it is no-load. Dims p5: 4.195 m from dimension split to rear (not labelled as tail swing) – tailSwing left null. trackGauge 4.1 m centres extended (5.0 m over tracks, 900 mm shoes); overallWidth 3.2 m transport. Max main boom tip height 38 m (tip, not hook)."
+}

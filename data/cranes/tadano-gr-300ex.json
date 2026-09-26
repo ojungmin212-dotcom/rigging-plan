@@ -1,0 +1,240 @@
+{
+  "id": "tadano-gr-300ex",
+  "manufacturer": "Tadano",
+  "model": "GR-300EX",
+  "type": "RT",
+  "boomType": "telescopic",
+  "maxCapacity_t": 30.0,
+  "axles": 2,
+  "operatingWeight_t": null,
+  "maxBoom_m": 31.0,
+  "maxHookHeight_m": null,
+  "counterweight_t": 2.38,
+  "outriggerSpan_m": [
+    6.38,
+    6.3
+  ],
+  "maxOutriggerForce_t": null,
+  "groundPressure_kPa": null,
+  "dims": {
+    "overallLength_m": 7.3,
+    "overallWidth_m": 2.62,
+    "transportHeight_m": 3.535,
+    "axlePositions_m": [
+      1.78,
+      5.28
+    ],
+    "wheelDiameter_m": 1.48,
+    "tyreSize": "445/95R25 (OR)",
+    "slewCentreFromFront_m": 3.53,
+    "trackLength_m": null,
+    "trackHeight_m": null,
+    "trackGauge_m": null,
+    "tailSwingRadius_m": 3.33,
+    "boomPivotHeight_m": null,
+    "boomPivotOffset_m": -2.46,
+    "telescopicSections": 4,
+    "dimsPage": "1"
+  },
+  "chartConfig": "Main boom, outriggers fully extended 6.3 m spread, 360° rotation, counterweight 2,380 kg (integral)",
+  "chartIncludesHookBlock": true,
+  "boomLengths_m": [
+    9.7,
+    16.8,
+    24.4,
+    31.0
+  ],
+  "radii_m": [
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    17.0,
+    18.0,
+    19.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0
+  ],
+  "capacity_t": [
+    [
+      30.0,
+      19.2,
+      12.5,
+      null
+    ],
+    [
+      27.2,
+      19.2,
+      12.5,
+      null
+    ],
+    [
+      23.4,
+      19.2,
+      12.5,
+      8.4
+    ],
+    [
+      21.3,
+      18.3,
+      12.5,
+      8.4
+    ],
+    [
+      19.6,
+      17.0,
+      12.5,
+      8.4
+    ],
+    [
+      18.1,
+      15.8,
+      12.5,
+      8.4
+    ],
+    [
+      16.6,
+      14.7,
+      12.5,
+      8.4
+    ],
+    [
+      15.2,
+      13.6,
+      11.7,
+      8.4
+    ],
+    [
+      14.1,
+      12.9,
+      11.0,
+      8.1
+    ],
+    [
+      null,
+      10.9,
+      9.75,
+      7.5
+    ],
+    [
+      null,
+      9.0,
+      8.75,
+      6.8
+    ],
+    [
+      null,
+      7.05,
+      7.9,
+      6.2
+    ],
+    [
+      null,
+      5.8,
+      6.6,
+      5.8
+    ],
+    [
+      null,
+      4.8,
+      5.6,
+      5.4
+    ],
+    [
+      null,
+      4.05,
+      4.75,
+      5.0
+    ],
+    [
+      null,
+      3.4,
+      4.15,
+      4.4
+    ],
+    [
+      null,
+      null,
+      3.6,
+      3.85
+    ],
+    [
+      null,
+      null,
+      3.2,
+      3.45
+    ],
+    [
+      null,
+      null,
+      2.75,
+      3.05
+    ],
+    [
+      null,
+      null,
+      2.45,
+      2.65
+    ],
+    [
+      null,
+      null,
+      2.05,
+      2.4
+    ],
+    [
+      null,
+      null,
+      1.8,
+      2.1
+    ],
+    [
+      null,
+      null,
+      null,
+      1.7
+    ],
+    [
+      null,
+      null,
+      null,
+      1.3
+    ],
+    [
+      null,
+      null,
+      null,
+      1.0
+    ],
+    [
+      null,
+      null,
+      null,
+      0.5
+    ]
+  ],
+  "source": {
+    "url": "https://mediahub.tadano.com/m/12ea02f06b63030b/original/doc_tadano_GR-300EX-3-00102_datasheet_metric_GEN_en.pdf",
+    "title": "Tadano GR-300EX spec sheet GR-300E-3-00102/EX-07 (metric, official Tadano mediahub; linked from tadano.com/south-korea RT page)",
+    "page": "6 (rated lifting capacities, outriggers fully extended 6.3 m, 360°); 1 (dimensions); 2-3 (specs)",
+    "retrieved": "2026-09-24"
+  },
+  "notes": "Only 4 boom lengths tabulated (4-section boom). Capacities are rated lifting capacities; hook block mass (270 kg for 30 t hook, 100 kg for 4.0 t) and slings must be deducted (operation note 3, p.11). Above thick line = strength, below = stability; radii include boom deflection. 9.7 m column = fully retracted boom. Outrigger longitudinal span = 3,030 + 3,350 mm (outrigger centres to slewing centre, p.1); transverse max 6.3 m (mid 5.9/5.0 m, min 2.2 m). Operating weight and max hook height not stated numerically in datasheet. DIMS (p.1): overall length 11,245 = 5,725 (boom head to front axle) + 3,500 wheelbase + 2,020; carrier length 7,300 mm -> front axle 1.78 m, rear axle 5.28 m from carrier front; slewing centre 1,750 mm ahead of rear axle (3.53 m from carrier front); boom foot pin 2,460 mm behind slewing centre; tail swing 3,330 mm. wheelDiameter computed from tyre size 445/95R25 (635 + 2x422.75 mm = 1.48 m), not a printed dimension."
+}

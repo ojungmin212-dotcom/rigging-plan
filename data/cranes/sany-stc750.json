@@ -1,0 +1,296 @@
+{
+  "id": "sany-stc750",
+  "manufacturer": "Sany",
+  "model": "STC750",
+  "type": "TC",
+  "boomType": "telescopic",
+  "maxCapacity_t": 75,
+  "axles": 4,
+  "operatingWeight_t": 46.0,
+  "maxBoom_m": 45.0,
+  "maxHookHeight_m": null,
+  "counterweight_t": 6.5,
+  "outriggerSpan_m": [
+    6.1,
+    7.6
+  ],
+  "maxOutriggerForce_t": null,
+  "groundPressure_kPa": null,
+  "dims": {
+    "overallLength_m": 14.1,
+    "overallWidth_m": 2.75,
+    "transportHeight_m": 3.85,
+    "axlePositions_m": [
+      2.67,
+      4.19,
+      8.59,
+      9.94
+    ],
+    "wheelDiameter_m": null,
+    "tyreSize": "12.00R24",
+    "slewCentreFromFront_m": null,
+    "trackLength_m": null,
+    "trackHeight_m": null,
+    "trackGauge_m": null,
+    "tailSwingRadius_m": 4.116,
+    "boomPivotHeight_m": null,
+    "boomPivotOffset_m": null,
+    "telescopicSections": 5,
+    "dimsPage": "PDF p.5 (brochure p.9 Dimension)"
+  },
+  "chartConfig": "Main boom 11.8-45 m, outriggers 6.1 m x 7.6 m (max span), 360°, counterweight 4.5 t + 2 t (6.5 t); telescoping mode I extended first (see notes)",
+  "chartIncludesHookBlock": true,
+  "boomLengths_m": [
+    11.8,
+    15.95,
+    20.1,
+    28.4,
+    36.7,
+    45.0
+  ],
+  "radii_m": [
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0,
+    30.0,
+    32.0
+  ],
+  "capacity_t": [
+    [
+      75.0,
+      54.0,
+      43.0,
+      null,
+      null,
+      null
+    ],
+    [
+      70.0,
+      54.0,
+      43.0,
+      null,
+      null,
+      null
+    ],
+    [
+      62.0,
+      51.0,
+      43.0,
+      30.0,
+      null,
+      null
+    ],
+    [
+      56.0,
+      48.0,
+      40.9,
+      30.0,
+      null,
+      null
+    ],
+    [
+      51.0,
+      45.0,
+      38.0,
+      30.0,
+      null,
+      null
+    ],
+    [
+      47.5,
+      42.0,
+      35.4,
+      29.0,
+      null,
+      null
+    ],
+    [
+      43.0,
+      39.0,
+      33.1,
+      27.5,
+      null,
+      null
+    ],
+    [
+      39.0,
+      36.0,
+      31.1,
+      26.0,
+      16.0,
+      null
+    ],
+    [
+      35.0,
+      32.5,
+      28.5,
+      25.0,
+      16.0,
+      null
+    ],
+    [
+      26.5,
+      26.2,
+      26.1,
+      22.0,
+      15.0,
+      9.5
+    ],
+    [
+      20.5,
+      21.5,
+      21.0,
+      20.0,
+      15.0,
+      9.5
+    ],
+    [
+      null,
+      17.5,
+      17.5,
+      17.0,
+      14.0,
+      9.0
+    ],
+    [
+      null,
+      14.3,
+      14.5,
+      14.5,
+      13.0,
+      9.0
+    ],
+    [
+      null,
+      12.0,
+      12.3,
+      12.5,
+      12.5,
+      9.0
+    ],
+    [
+      null,
+      null,
+      10.1,
+      11.5,
+      12.0,
+      9.0
+    ],
+    [
+      null,
+      null,
+      9.0,
+      9.5,
+      10.5,
+      8.5
+    ],
+    [
+      null,
+      null,
+      7.4,
+      8.7,
+      9.4,
+      8.25
+    ],
+    [
+      null,
+      null,
+      6.3,
+      7.2,
+      8.4,
+      8.0
+    ],
+    [
+      null,
+      null,
+      null,
+      5.2,
+      6.5,
+      6.8
+    ],
+    [
+      null,
+      null,
+      null,
+      4.1,
+      5.2,
+      5.5
+    ],
+    [
+      null,
+      null,
+      null,
+      3.1,
+      4.1,
+      4.5
+    ],
+    [
+      null,
+      null,
+      null,
+      2.4,
+      3.2,
+      3.5
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      2.5,
+      2.8
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      2.0,
+      2.2
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.5,
+      1.7
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.4
+    ]
+  ],
+  "source": {
+    "url": "https://www.sanyglobal.com/all/d/file/p/2017-03-02/af0f448e4762f6053306cb254e378409.pdf",
+    "title": "SANY STC750 Truck Crane 75 tons lifting capacity brochure (sanyglobal.com, version 2015.08)",
+    "page": "PDF p.7 right table (brochure p.13 Load Chart, counterweight 4.5T+2T); dimensions PDF p.5; technical parameters PDF p.6",
+    "retrieved": "2026-09-24"
+  },
+  "notes": "Chart in kg converted to t. The printed chart has 9 columns for 6 boom lengths because the boom has two telescoping groups (cylinder I = 2nd section, II = sections 3-5 synchronized): 20.1, 28.4 and 36.7 m each appear twice. Stored columns use the mode with group I at 100% (11.8 = 0/0, 15.95 = 50/0, 20.1 = 100/0, 28.4 = 100/33, 36.7 = 100/66, 45 = 100/100 %); these give the higher values at short radius. Alternative-mode columns NOT stored (t@radius m) - 20.1(0/33): 30@3, 29@3.5, 27@4, 25@4.5, 23@5, 21@5.5, 20@6, 18.2@6.5, 16.2@7, 13@8, 10@9, 9@10, 8@11, 7.6@12, 7.2@13, 6.8@14, 6.5@15, 6@16; 28.4(0/66): 16@4, 16@4.5, 16@5, 15.5@5.5, 15@6, 15@6.5, 14@7, 13@8, 12.5@9, 11.5@10, 9.6@11, 8.5@12, 7.5@13, 7@14, 6.5@15, 6@16, 5.5@18, 5@20, 4.2@22, 3.8@24; 36.7(0/100): 9.5@6.5, 9.5@7, 9@8, 9@9, 9@10, 8.6@11, 8.25@12, 8@13, 7@14, 6.5@15, 5.5@16, 5.2@18, 5@20, 4.5@22, 4@24, 3.5@26, 3@28, 2.5@30. Note the alternative mode gives HIGHER capacity at long radius for 28.4 m (>=18 m) and 36.7 m (>=22 m). Page 12 (left) chart is for 4.5 t counterweight only; the 4.5 t + 2 t (flexible) chart was used. Hook blocks: 75 t main hook 800 kg, 30 t hook 320 kg, 5 t aux hook 140 kg; brochure does not explicitly state whether chart includes hook weight - assumed included (usual Chinese practice), UNVERIFIED. Axle positions measured from carrier front: side-view chain 1730 (boom head overhang ahead of cab) + 2670 front overhang + 1520 + 4400 + 1350 wheelbase + 2090 rear; overall length 14100 mm incl. boom overhang (chain sums to 13760, remainder not dimensioned). Plan view splits the 6100 mm longitudinal outrigger span about a centre line as 2700/3400 (top) and 3000/3100 (bottom) - inconsistent, so slew centre left null. Overall weight 46 t (axles 1-2 20 t, 3-4 26 t). Max lifting moment 2560.2 kN·m base / 1254.4 kN·m full boom. Fully-extended boom lifting height stated in text as 45 m (not used as hook height)."
+}

@@ -1,0 +1,341 @@
+{
+  "id": "tadano-gr-600ex",
+  "manufacturer": "Tadano",
+  "model": "GR-600EX",
+  "type": "RT",
+  "boomType": "telescopic",
+  "maxCapacity_t": 60.0,
+  "axles": 2,
+  "operatingWeight_t": null,
+  "maxBoom_m": 43.0,
+  "maxHookHeight_m": null,
+  "counterweight_t": 5.67,
+  "outriggerSpan_m": [
+    7.33,
+    7.3
+  ],
+  "maxOutriggerForce_t": null,
+  "groundPressure_kPa": null,
+  "dims": {
+    "overallLength_m": 8.455,
+    "overallWidth_m": 3.315,
+    "transportHeight_m": 3.79,
+    "axlePositions_m": [
+      2.1,
+      6.05
+    ],
+    "wheelDiameter_m": null,
+    "tyreSize": "29.5-25 22PR (OR)",
+    "slewCentreFromFront_m": 4.175,
+    "trackLength_m": null,
+    "trackHeight_m": null,
+    "trackGauge_m": null,
+    "tailSwingRadius_m": 4.19,
+    "boomPivotHeight_m": null,
+    "boomPivotOffset_m": -2.2,
+    "telescopicSections": 5,
+    "dimsPage": "1"
+  },
+  "chartConfig": "Main boom, outriggers fully extended 7.3 m spread, 360° rotation, counterweight 5,670 kg (integral), telescoping mode I (mode II for 39.0 m)",
+  "chartIncludesHookBlock": true,
+  "boomLengths_m": [
+    11.0,
+    15.0,
+    19.0,
+    27.0,
+    35.0,
+    39.0,
+    43.0
+  ],
+  "radii_m": [
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    8.5,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    14.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0,
+    30.0,
+    32.0,
+    34.0,
+    36.0
+  ],
+  "capacity_t": [
+    [
+      60.0,
+      40.8,
+      32.0,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      54.9,
+      40.8,
+      32.0,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      53.8,
+      40.8,
+      32.0,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      47.7,
+      40.8,
+      32.0,
+      22.0,
+      null,
+      null,
+      null
+    ],
+    [
+      42.8,
+      40.8,
+      32.0,
+      21.3,
+      null,
+      null,
+      null
+    ],
+    [
+      38.7,
+      37.5,
+      32.0,
+      20.3,
+      null,
+      null,
+      null
+    ],
+    [
+      35.3,
+      34.6,
+      31.9,
+      19.4,
+      null,
+      null,
+      null
+    ],
+    [
+      32.4,
+      32.0,
+      30.3,
+      18.6,
+      14.0,
+      null,
+      null
+    ],
+    [
+      29.9,
+      29.6,
+      28.8,
+      17.8,
+      13.5,
+      null,
+      null
+    ],
+    [
+      27.7,
+      27.4,
+      25.8,
+      17.7,
+      13.0,
+      null,
+      null
+    ],
+    [
+      25.7,
+      24.9,
+      23.2,
+      17.6,
+      12.6,
+      10.0,
+      null
+    ],
+    [
+      22.6,
+      22.0,
+      21.0,
+      17.5,
+      12.2,
+      10.0,
+      null
+    ],
+    [
+      null,
+      19.5,
+      19.1,
+      17.4,
+      11.9,
+      10.0,
+      9.0
+    ],
+    [
+      null,
+      15.8,
+      15.3,
+      15.7,
+      11.8,
+      9.6,
+      8.7
+    ],
+    [
+      null,
+      13.0,
+      12.6,
+      13.6,
+      11.6,
+      9.1,
+      8.3
+    ],
+    [
+      null,
+      10.9,
+      10.5,
+      11.6,
+      11.4,
+      8.6,
+      7.9
+    ],
+    [
+      null,
+      null,
+      7.6,
+      8.6,
+      9.1,
+      7.9,
+      7.4
+    ],
+    [
+      null,
+      null,
+      5.5,
+      6.5,
+      7.0,
+      7.4,
+      7.3
+    ],
+    [
+      null,
+      null,
+      null,
+      5.0,
+      5.5,
+      6.1,
+      5.7
+    ],
+    [
+      null,
+      null,
+      null,
+      3.9,
+      4.4,
+      4.9,
+      4.6
+    ],
+    [
+      null,
+      null,
+      null,
+      3.1,
+      3.5,
+      4.1,
+      3.7
+    ],
+    [
+      null,
+      null,
+      null,
+      2.4,
+      2.8,
+      3.3,
+      3.0
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      2.2,
+      2.8,
+      2.4
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.7,
+      2.3,
+      1.9
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.3,
+      1.9,
+      1.5
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.0,
+      1.5,
+      1.2
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.2,
+      0.9
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.0,
+      null
+    ]
+  ],
+  "source": {
+    "url": "https://mediahub.tadano.com/m/c5d16ebe8f8d045/original/doc_tadano_GR-600EX-3-00501_datasheet_metric_GEN_en.pdf",
+    "title": "Tadano GR-600EX spec sheet GR-600E-3-00501/EX-02 (metric, official Tadano mediahub; linked from tadano.com/south-korea RT page)",
+    "page": "7 (rated lifting capacities, outriggers fully extended 7.3 m, 360°); 1 (dimensions); 2-3 (specs)",
+    "retrieved": "2026-09-24"
+  },
+  "notes": "Source chart has 10 columns because 19.0/27.0/35.0 m booms are rated in two telescoping modes (I and II). This file uses mode I for 11.0, 15.0, 19.0, 27.0, 35.0, 43.0 m (11.0 and 43.0 are I,II) and mode II for 39.0 m (only mode given). Mode II gives higher values at long radii (e.g. 27.0 m @22 m: mode I 3.1 t, mode II 4.3 t) - consult source for mode II. Capacities are rated lifting capacities; hook block mass (540 kg for 60 t, 450 kg for 35 t, 150 kg for 5.6 t) and slings must be deducted (operation note 3). Radii include boom deflection. Outrigger longitudinal span = 3,550 + 3,780 mm (outrigger centres to slewing centre, p.1); transverse max 7.3 m (mid 6.7/5.5 m, min 2.7 m). Operating weight and max hook height not stated numerically. DIMS (p.1): overall 13,380 = 7,025 (boom head to front axle) + 3,950 wheelbase + 2,405; carrier length 8,455 -> front axle 2.10 m, rear axle 6.05 m from carrier front; slewing centre 1,875 mm ahead of rear axle (4.175 m); boom foot pin 2,200 mm behind slewing centre; tail swing 4,190. Wheel diameter not printed (bias tyre 29.5-25), left null."
+}

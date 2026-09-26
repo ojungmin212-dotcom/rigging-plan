@@ -1,0 +1,250 @@
+{
+  "id": "xcmg-xct25l4-y",
+  "manufacturer": "XCMG",
+  "model": "XCT25L4_Y",
+  "type": "TC",
+  "boomType": "telescopic",
+  "maxCapacity_t": 25,
+  "axles": 3,
+  "operatingWeight_t": 27.5,
+  "maxBoom_m": 34.0,
+  "maxHookHeight_m": 34.5,
+  "counterweight_t": 4.2,
+  "outriggerSpan_m": [
+    5.23,
+    6.4
+  ],
+  "maxOutriggerForce_t": null,
+  "groundPressure_kPa": null,
+  "dims": {
+    "overallLength_m": 12.535,
+    "overallWidth_m": 2.55,
+    "transportHeight_m": 3.42,
+    "axlePositions_m": [
+      2.442,
+      6.867,
+      8.217
+    ],
+    "wheelDiameter_m": null,
+    "tyreSize": "11.00-20",
+    "slewCentreFromFront_m": null,
+    "trackLength_m": null,
+    "trackHeight_m": null,
+    "trackGauge_m": null,
+    "tailSwingRadius_m": 3.425,
+    "boomPivotHeight_m": null,
+    "boomPivotOffset_m": null,
+    "telescopicSections": 4,
+    "dimsPage": "p.2 (Dimensions, right-hand drive, swing-away jib row)"
+  },
+  "chartConfig": "Main boom 10.6-34 m, outriggers fully extended 6.4 m x 5.23 m, 360° (with 5th jack down), fixed counterweight 4.2 t",
+  "chartIncludesHookBlock": true,
+  "boomLengths_m": [
+    10.6,
+    15.28,
+    19.96,
+    24.64,
+    29.32,
+    34.0
+  ],
+  "radii_m": [
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    12.0,
+    14.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0,
+    30.0
+  ],
+  "capacity_t": [
+    [
+      25.0,
+      16.0,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      23.0,
+      16.0,
+      16.0,
+      null,
+      null,
+      null
+    ],
+    [
+      22.5,
+      16.0,
+      16.0,
+      13.5,
+      null,
+      null
+    ],
+    [
+      21.7,
+      16.0,
+      16.0,
+      13.0,
+      null,
+      null
+    ],
+    [
+      19.7,
+      16.0,
+      16.0,
+      12.8,
+      10.5,
+      null
+    ],
+    [
+      17.7,
+      16.0,
+      15.2,
+      12.5,
+      10.5,
+      null
+    ],
+    [
+      15.9,
+      15.5,
+      14.3,
+      11.8,
+      10.5,
+      6.9
+    ],
+    [
+      12.1,
+      12.6,
+      12.8,
+      10.8,
+      10.0,
+      6.9
+    ],
+    [
+      9.9,
+      10.4,
+      10.6,
+      9.8,
+      9.2,
+      6.9
+    ],
+    [
+      null,
+      8.5,
+      8.7,
+      8.8,
+      8.4,
+      6.7
+    ],
+    [
+      null,
+      7.1,
+      7.3,
+      7.4,
+      7.5,
+      6.3
+    ],
+    [
+      null,
+      5.2,
+      5.3,
+      5.4,
+      5.5,
+      5.3
+    ],
+    [
+      null,
+      null,
+      4.1,
+      4.2,
+      4.2,
+      4.3
+    ],
+    [
+      null,
+      null,
+      3.2,
+      3.3,
+      3.3,
+      3.4
+    ],
+    [
+      null,
+      null,
+      null,
+      2.6,
+      2.7,
+      2.75
+    ],
+    [
+      null,
+      null,
+      null,
+      2.1,
+      2.1,
+      2.2
+    ],
+    [
+      null,
+      null,
+      null,
+      1.6,
+      1.7,
+      1.8
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.4,
+      1.45
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.1,
+      1.2
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      0.9
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      0.7
+    ]
+  ],
+  "source": {
+    "url": "https://www.xcmg.net.au/wp-content/uploads/2023/10/XCT25L4_Y-Crane.pdf",
+    "title": "XCMG XCT25L4_Y Truck Crane Technical Specifications (XCMG Australia)",
+    "page": "p.9 lifting capacities; p.2 dimensions; p.6 weights; p.14-15 main technical parameters",
+    "retrieved": "2026-09-24"
+  },
+  "notes": "Chart icon shows 360° operation with 5th (front) jack down. Notes p.12: rated loads include hook block and slings (25 t hook block 297 kg, 3 t hook 60 kg) and are within 75% of tipping load. Axle positions measured from carrier front bumper: front overhang E=2442 mm, wheelbase 4425+1350 mm, rear overhang 2420 mm (carrier 10637 mm); overall length 12535 mm includes 1528 mm boom/jib front extension and 370 mm rear. Transport height 3420 mm and length are for swing-away jib version (underslung jib: 12942 mm x 3920 mm). Total vehicle mass in travel configuration 27.5 t (axles 5.9/10.8/10.8 t). Max hook height 34.5 m is fully-extended boom hoist height (43.2 m with 8.3 m jib). Max load moment 965 kN·m base boom / 623 kN·m full boom. Wheel diameter, slew centre and boom pivot not dimensioned on drawing."
+}

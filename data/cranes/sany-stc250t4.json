@@ -1,0 +1,295 @@
+{
+  "id": "sany-stc250t4",
+  "manufacturer": "Sany",
+  "model": "STC250T4",
+  "type": "TC",
+  "boomType": "telescopic",
+  "maxCapacity_t": 25,
+  "axles": 3,
+  "operatingWeight_t": 30.6,
+  "maxBoom_m": 35.0,
+  "maxHookHeight_m": null,
+  "counterweight_t": 5.0,
+  "outriggerSpan_m": [
+    5.18,
+    6.4
+  ],
+  "maxOutriggerForce_t": null,
+  "groundPressure_kPa": null,
+  "dims": {
+    "overallLength_m": 12.83,
+    "overallWidth_m": 2.55,
+    "transportHeight_m": 3.55,
+    "axlePositions_m": [
+      2.603,
+      7.183,
+      8.533
+    ],
+    "wheelDiameter_m": null,
+    "tyreSize": "12R22.5",
+    "slewCentreFromFront_m": null,
+    "trackLength_m": null,
+    "trackHeight_m": null,
+    "trackGauge_m": null,
+    "tailSwingRadius_m": 3.3,
+    "boomPivotHeight_m": null,
+    "boomPivotOffset_m": null,
+    "telescopicSections": 4,
+    "dimsPage": "p.5 (brochure p.08 Overall Dimensions)"
+  },
+  "chartConfig": "Telescopic boom 10.8-35 m, outriggers fully extended 6.4 m x 5.18 m, 360° (5th outrigger landed), fixed counterweight 5 t",
+  "chartIncludesHookBlock": true,
+  "boomLengths_m": [
+    10.8,
+    15.6,
+    20.5,
+    25.3,
+    30.2,
+    35.0
+  ],
+  "radii_m": [
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0,
+    30.0
+  ],
+  "capacity_t": [
+    [
+      25.0,
+      23.0,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      25.0,
+      23.0,
+      20.4,
+      null,
+      null,
+      null
+    ],
+    [
+      24.5,
+      21.5,
+      20.4,
+      null,
+      null,
+      null
+    ],
+    [
+      23.2,
+      19.5,
+      18.9,
+      15.4,
+      null,
+      null
+    ],
+    [
+      22.0,
+      18.5,
+      17.9,
+      14.8,
+      null,
+      null
+    ],
+    [
+      20.0,
+      17.4,
+      16.9,
+      13.9,
+      null,
+      null
+    ],
+    [
+      18.0,
+      16.4,
+      15.5,
+      13.0,
+      10.9,
+      null
+    ],
+    [
+      16.2,
+      14.8,
+      14.4,
+      12.3,
+      10.5,
+      null
+    ],
+    [
+      14.6,
+      13.5,
+      13.3,
+      11.6,
+      10.0,
+      null
+    ],
+    [
+      13.0,
+      12.2,
+      12.3,
+      11.0,
+      9.6,
+      8.0
+    ],
+    [
+      11.5,
+      11.2,
+      11.3,
+      10.5,
+      9.1,
+      7.6
+    ],
+    [
+      null,
+      9.8,
+      10.0,
+      9.6,
+      8.3,
+      7.0
+    ],
+    [
+      null,
+      8.6,
+      8.6,
+      8.8,
+      7.6,
+      6.5
+    ],
+    [
+      null,
+      7.6,
+      7.8,
+      8.0,
+      7.0,
+      6.0
+    ],
+    [
+      null,
+      6.6,
+      6.7,
+      7.1,
+      6.5,
+      5.6
+    ],
+    [
+      null,
+      null,
+      5.8,
+      6.1,
+      6.0,
+      5.1
+    ],
+    [
+      null,
+      null,
+      5.1,
+      5.3,
+      5.4,
+      4.7
+    ],
+    [
+      null,
+      null,
+      4.5,
+      4.7,
+      4.7,
+      4.3
+    ],
+    [
+      null,
+      null,
+      4.0,
+      4.15,
+      4.2,
+      4.0
+    ],
+    [
+      null,
+      null,
+      null,
+      3.3,
+      3.4,
+      3.4
+    ],
+    [
+      null,
+      null,
+      null,
+      2.7,
+      2.7,
+      2.8
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      2.3,
+      2.3
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.9,
+      1.9
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.6
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.3
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.0
+    ]
+  ],
+  "source": {
+    "url": "https://www.sanyglobal.com/d/file/product/crane-mobile/2020-04-28/0bbb8adb294859e0ff3505c5106d512d.pdf",
+    "title": "SANY Truck Crane STC250T4 Product Specifications (sanyglobal.com, printed April 2020)",
+    "page": "PDF p.7 (brochure p.12 Load Chart-Telescopic Boom, remarks p.13); dimensions PDF p.5 (brochure p.08); tech spec p.5; axle loads p.6",
+    "retrieved": "2026-09-24"
+  },
+  "notes": "Chart in kg, converted to t (/1000). Chart icons: telescopic boom, outriggers fully extended, 360°, counterweight. Remark 2: 360° values apply when the fifth outrigger is landed; front operation forbidden otherwise. Remark 3: values include hooks and slings (main hook 320 kg, auxiliary hook 85 kg). Remark 7: boom capacity 450 kg less when jib is mounted. Axle positions measured from carrier front (drawing chain: 1602 mm boom overhang, 2603 front overhang, 4580 + 1350 wheelbase, 2280 rear overhang, 415 mm; total 12830 mm). Plan view shows outrigger longitudinal span 5180 mm split 3009/2171 (upper chain) and 2751/2429 (lower chain) about a vertical centre line - inconsistent, so slew centre left null. Gross weight 30.6 t (axles 6.8/12.0/11.8 t). Max lifting moment 1078 kN·m base / 658 kN·m full boom. Main-boom hoist height given only graphically (~35.5 m per brochure text 'Reach a new height of 35.5m'), left null. Tyre size from brochure p.2 text."
+}

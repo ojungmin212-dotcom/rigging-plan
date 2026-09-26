@@ -1,0 +1,351 @@
+{
+  "id": "tadano-gr-800ex",
+  "manufacturer": "Tadano",
+  "model": "GR-800EX",
+  "type": "RT",
+  "boomType": "telescopic",
+  "maxCapacity_t": 80.0,
+  "axles": 2,
+  "operatingWeight_t": null,
+  "maxBoom_m": 47.0,
+  "maxHookHeight_m": null,
+  "counterweight_t": 9.98,
+  "outriggerSpan_m": [
+    7.33,
+    7.3
+  ],
+  "maxOutriggerForce_t": null,
+  "groundPressure_kPa": null,
+  "dims": {
+    "overallLength_m": 8.455,
+    "overallWidth_m": 3.315,
+    "transportHeight_m": 3.795,
+    "axlePositions_m": [
+      2.1,
+      6.05
+    ],
+    "wheelDiameter_m": null,
+    "tyreSize": "29.5-25 34PR (OR)",
+    "slewCentreFromFront_m": 4.175,
+    "trackLength_m": null,
+    "trackHeight_m": null,
+    "trackGauge_m": null,
+    "tailSwingRadius_m": 4.19,
+    "boomPivotHeight_m": null,
+    "boomPivotOffset_m": -2.2,
+    "telescopicSections": 5,
+    "dimsPage": "1"
+  },
+  "chartConfig": "Main boom, outriggers fully extended 7.3 m spread, 360° rotation, counterweight 9,980 kg (integral), telescoping mode I (mode II for 42.6 m)",
+  "chartIncludesHookBlock": true,
+  "boomLengths_m": [
+    12.0,
+    16.4,
+    20.8,
+    29.5,
+    38.3,
+    42.6,
+    47.0
+  ],
+  "radii_m": [
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    14.0,
+    16.0,
+    18.0,
+    20.0,
+    22.0,
+    24.0,
+    26.0,
+    28.0,
+    30.0,
+    32.0,
+    34.0,
+    36.0,
+    38.0,
+    40.0
+  ],
+  "capacity_t": [
+    [
+      80.0,
+      46.6,
+      40.9,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      74.2,
+      46.6,
+      40.9,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      67.0,
+      46.6,
+      40.9,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      60.9,
+      46.6,
+      40.9,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      55.7,
+      46.6,
+      38.9,
+      18.2,
+      null,
+      null,
+      null
+    ],
+    [
+      51.1,
+      46.6,
+      36.8,
+      18.2,
+      null,
+      null,
+      null
+    ],
+    [
+      46.2,
+      45.8,
+      34.9,
+      18.2,
+      null,
+      null,
+      null
+    ],
+    [
+      42.1,
+      41.7,
+      33.2,
+      18.2,
+      null,
+      null,
+      null
+    ],
+    [
+      38.6,
+      38.3,
+      31.6,
+      18.2,
+      15.1,
+      null,
+      null
+    ],
+    [
+      35.6,
+      34.4,
+      30.1,
+      18.2,
+      15.1,
+      null,
+      null
+    ],
+    [
+      33.0,
+      31.0,
+      28.1,
+      18.2,
+      15.1,
+      null,
+      null
+    ],
+    [
+      24.0,
+      24.9,
+      23.3,
+      18.2,
+      15.1,
+      11.0,
+      null
+    ],
+    [
+      null,
+      20.2,
+      19.7,
+      18.2,
+      14.6,
+      11.0,
+      9.5
+    ],
+    [
+      null,
+      16.7,
+      16.3,
+      16.6,
+      13.8,
+      10.7,
+      9.5
+    ],
+    [
+      null,
+      14.0,
+      13.6,
+      14.6,
+      13.0,
+      10.2,
+      9.5
+    ],
+    [
+      null,
+      10.2,
+      9.9,
+      11.2,
+      11.3,
+      9.3,
+      9.3
+    ],
+    [
+      null,
+      null,
+      7.3,
+      8.6,
+      9.1,
+      8.5,
+      8.6
+    ],
+    [
+      null,
+      null,
+      5.5,
+      6.7,
+      7.2,
+      7.7,
+      7.5
+    ],
+    [
+      null,
+      null,
+      null,
+      5.3,
+      5.8,
+      6.6,
+      6.2
+    ],
+    [
+      null,
+      null,
+      null,
+      4.2,
+      4.7,
+      5.4,
+      5.0
+    ],
+    [
+      null,
+      null,
+      null,
+      3.3,
+      3.8,
+      4.5,
+      4.1
+    ],
+    [
+      null,
+      null,
+      null,
+      2.5,
+      3.0,
+      3.8,
+      3.4
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      2.4,
+      3.1,
+      2.8
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.9,
+      2.6,
+      2.2
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.5,
+      2.2,
+      1.8
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      1.1,
+      1.8,
+      1.4
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.4,
+      1.1
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      1.1,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      0.9,
+      null
+    ]
+  ],
+  "source": {
+    "url": "https://mediahub.tadano.com/m/284e5aa21c3a2bfc/original/doc_tadano_GR-800EX-3-00501_datasheet_metric_GEN_en.pdf",
+    "title": "Tadano GR-800EX spec sheet GR-800E-3-00501/EX-02 (metric, official Tadano mediahub; linked from tadano.com/south-korea RT page)",
+    "page": "7 (rated lifting capacities, outriggers fully extended 7.3 m, 360°); 1 (dimensions); 2-3 (specs)",
+    "retrieved": "2026-09-24"
+  },
+  "notes": "Source chart has 10 columns because 20.8/29.5/38.3 m booms are rated in two telescoping modes (I and II). This file uses mode I columns for 12.0, 16.4, 20.8, 29.5, 38.3 and 47.0 m (12.0 and 47.0 are I,II) and mode II for 42.6 m (only mode given). Mode II gives higher values at long radii for 20.8/29.5/38.3 m (e.g. 29.5 m @26 m: mode I 2.5 t, mode II 4.0 t) - consult source for mode II. Capacities are rated lifting capacities; hook block mass (700 kg for 80 t hook, 540/500/450 kg for 60/50/35 t) and slings must be deducted (note 3 p.14). Above thick line = strength, below = stability; radii include boom deflection. Outrigger longitudinal span = 3,550 + 3,780 mm (front/rear outrigger centre to slewing centre, p.1); transverse max 7.3 m (mid 6.7/5.5 m, min 2.7 m). Operating weight and max hook height not stated numerically in datasheet. DIMS (p.1 side view): overall length 14,375 = 8,020 (boom head to front axle) + 3,950 wheelbase + 2,405; carrier length 8,455 mm -> carrier front 5,920 mm behind boom head, front axle 2.10 m, rear axle 6.05 m from carrier front; slewing centre 1,875 mm ahead of rear axle (4.175 m from carrier front); boom foot pin 2,200 mm behind slewing centre; tail swing 4,190 mm. Wheel diameter not printed (bias tyre 29.5-25), left null."
+}
