@@ -1,5 +1,5 @@
 // 크레인 JSON(data/cranes/*.json)을 검증해 index.src.html에 삽입 → index.html
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -57,3 +57,21 @@ delete liveries._meta;
 const src = readFileSync(join(here, 'index.src.html'), 'utf8');
 writeFileSync(join(here, 'index.html'), src.replace('/*__CRANES__*/[]', JSON.stringify(cranes)));
 console.log(`→ index.html (${cranes.length}종)`);
+
+// 공개 배포용(GitHub Pages): 문서 골격·viewport·기본 리셋을 붙인 완전한 HTML → docs/index.html
+const page = readFileSync(join(here, 'index.html'), 'utf8');
+const shell = `<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="공사 기획 단계에서 중량물별 필요 크레인 용량을 제조사 정격하중표로 검토하는 도구">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+${page.replace('<meta charset="utf-8">\n', '')}
+</html>
+`;
+const docsDir = join(here, '..', 'docs');
+if (!existsSync(docsDir)) mkdirSync(docsDir);
+writeFileSync(join(docsDir, 'index.html'), shell);
+writeFileSync(join(docsDir, '.nojekyll'), '');
+console.log('→ docs/index.html (배포용)');

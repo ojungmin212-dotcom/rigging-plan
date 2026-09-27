@@ -4,9 +4,13 @@
 제조사 공개 정격하중표 75종(올터레인·러프터레인·트럭·격자붐 크롤러·텔레스코픽 크롤러, 25–1,000 t급)으로
 사용률·붐 길이·붐 각도·인양 높이·장애물 간섭을 검토하고 최소 적정 크레인을 추천한다.
 
+## 바로 쓰기
+https://ojungmin212-dotcom.github.io/rigging-plan/
+
 ## 구성
 - `web/index.src.html` — 앱 원본 (단일 HTML, 의존성 없음)
-- `web/build.mjs` — 크레인 데이터 검증 후 `web/index.html` 생성
+- `web/build.mjs` — 크레인 데이터 검증 후 `web/index.html`, 배포용 `docs/index.html` 생성
+- `docs/` — GitHub Pages 배포 폴더 (빌드 산출물)
 - `data/cranes/*.json` — 크레인별 정격하중표·치수 (스키마: `data/spec/SCHEMA.md`)
 - `data/spec/liveries.json` — 제조사 표준 도색
 - `DESIGN.md` — 설계 문서
